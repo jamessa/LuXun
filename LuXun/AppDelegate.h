@@ -13,11 +13,11 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
-@property (strong) IBOutlet NSTextView *textView;
-@property (strong) IBOutlet NSTextView *coachTextView;
+@property (strong) IBOutlet NSTextView *inputTextView;
+@property (strong) IBOutlet NSTextView *templateTextView;
 @property (weak) IBOutlet NSTextFieldCell *hintLabel;
 @property (weak) IBOutlet NSTextField *hintTextField;
-@property (weak) IBOutlet SynchroScrollView *hintScrollView;
+@property (weak) IBOutlet SynchroScrollView *templateScrollView;
 @property (weak) IBOutlet SynchroScrollView *inputScrollView;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;

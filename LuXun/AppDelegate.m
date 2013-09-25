@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoreChineseEngine.h"
+#import "LXAttributes.h"
 
 @implementation AppDelegate
 
@@ -19,8 +20,17 @@
 {
   // Insert code here to initialize your application
   
-  [self.inputScrollView setSynchronizeScrollView:self.hintScrollView];
-  [self.hintScrollView setSynchronizeScrollView:self.inputScrollView];
+  [self.inputScrollView setSynchronizeScrollView:self.templateScrollView];
+  [self.templateScrollView setSynchronizeScrollView:self.inputScrollView];
+  
+  NSTextStorage *templateTextStorage = self.templateTextView.textStorage;
+  
+  
+  NSAttributedString *attributedString = [[NSAttributedString alloc]
+                                          initWithString:@"很多年之後，我有個綽號叫做西毒，任何人都可以變得狠毒，只要你嘗試過什麼叫嫉妒。我不會介意其他人怎麼看我，我只不過不想別人比我更開心。 我以為有一些人永遠都不會嫉妒，因為他太驕傲。在我出道的時候，我認識了一個人，因為他喜歡在東邊出沒，所以很多年後，他有個綽號叫東邪。 因為今年是五黃臨太歲，到處都是旱災，有旱災的地方一定有麻煩，有麻煩，那我就有生意，我的名字叫歐陽峰，我的職業就是替人解決麻煩。"
+                                          attributes:[LXAttributes attributesForTemplateTextView]];
+  
+  [templateTextStorage appendAttributedString:attributedString];
   
 }
 
@@ -191,8 +201,8 @@
 
 - (void)textDidChange:(NSNotification *)notification {
   [self.hintTextField setHidden:YES];
-  NSRange range = [self.textView selectedRange];
-  NSString *text= [self.coachTextView string];
+  NSRange range = [self.inputTextView selectedRange];
+  NSString *text= [self.templateTextView string];
   
   
   if (range.location > text.length-1) {
@@ -220,7 +230,7 @@
   }
   
   NSUInteger retCount;
-  NSRectArray rectArray = [self.textView.layoutManager rectArrayForGlyphRange:range withinSelectedGlyphRange:(NSRange){NSNotFound,0} inTextContainer:self.textView.textContainer rectCount:&retCount];
+  NSRectArray rectArray = [self.inputTextView.layoutManager rectArrayForGlyphRange:range withinSelectedGlyphRange:(NSRange){NSNotFound,0} inTextContainer:self.inputTextView.textContainer rectCount:&retCount];
   
   if (retCount == 0)
     return;

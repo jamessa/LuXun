@@ -649,40 +649,29 @@
         </menu>
         <window title="快快樂樂學漢語拼音" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="529" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="529" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igs-Ac-2xA" customClass="SynchroScrollView">
-                        <rect key="frame" x="264" y="38" width="200" height="300"/>
+                        <rect key="frame" x="14" y="0.0" width="500" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="zi2-cD-waP">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="360"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView ambiguous="YES" editable="NO" selectable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="B5Q-hO-8q3">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="1912"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="360"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="200" height="300"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
-                                    <attributedString key="textStorage">
-                                        <fragment>
-                                            <string key="content">很多年之後，我有個綽號叫做西毒，任何人都可以變得狠毒，只要你嘗試過什麼叫嫉妒。我不會介意其他人怎麼看我，我只不過不想別人比我更開心。 我以為有一些人永遠都不會嫉妒，因為他太驕傲。在我出道的時候，我認識了一個人，因為他喜歡在東邊出沒，所以很多年後，他有個綽號叫東邪。 因為今年是五黃臨太歲，到處都是旱災，有旱災的地方一定有麻煩，有麻煩，那我就有生意，我的名字叫歐陽峰，我的職業就是替人解決麻煩。</string>
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="24" name="STHeitiTC-Light"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="21" lineHeightMultiple="2"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <size key="minSize" width="500" height="360"/>
+                                    <size key="maxSize" width="500" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="200" height="300"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <size key="minSize" width="500" height="360"/>
+                                    <size key="maxSize" width="500" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -692,7 +681,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" id="MFi-Ho-ndP">
-                            <rect key="frame" x="184" y="0.0" width="16" height="300"/>
+                            <rect key="frame" x="484" y="0.0" width="16" height="360"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -706,18 +695,18 @@
                         </textFieldCell>
                     </textField>
                     <scrollView identifier="Input" fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-2c-M4I" customClass="SynchroScrollView">
-                        <rect key="frame" x="13" y="38" width="200" height="300"/>
+                        <rect key="frame" x="14" y="5" width="500" height="335"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="ac3-Zb-Gj1">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="335"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Wul-nF-fSQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="335"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="200" height="300"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <size key="minSize" width="500" height="335"/>
+                                    <size key="maxSize" width="500" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="s">
                                             <attributes>
@@ -727,8 +716,8 @@
                                         </fragment>
                                     </attributedString>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="200" height="300"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <size key="minSize" width="500" height="335"/>
+                                    <size key="maxSize" width="500" height="10000000"/>
                                     <connections>
                                         <outlet property="delegate" destination="494" id="JHj-pT-Qkb"/>
                                     </connections>
@@ -741,7 +730,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" id="epi-e9-K18">
-                            <rect key="frame" x="184" y="0.0" width="16" height="300"/>
+                            <rect key="frame" x="484" y="0.0" width="16" height="335"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
@@ -750,12 +739,12 @@
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="coachTextView" destination="B5Q-hO-8q3" id="jC5-lZ-SND"/>
                 <outlet property="hintLabel" destination="u7A-0O-krm" id="Cqb-Ko-iQ5"/>
-                <outlet property="hintScrollView" destination="Igs-Ac-2xA" id="X5J-5d-B5x"/>
                 <outlet property="hintTextField" destination="jFf-7L-tPK" id="DMZ-pG-K8X"/>
                 <outlet property="inputScrollView" destination="Iwo-2c-M4I" id="6X7-TV-UPu"/>
-                <outlet property="textView" destination="Wul-nF-fSQ" id="5oO-bG-uFu"/>
+                <outlet property="inputTextView" destination="Wul-nF-fSQ" id="OoE-Nq-4RI"/>
+                <outlet property="templateScrollView" destination="Igs-Ac-2xA" id="ShS-aV-pIT"/>
+                <outlet property="templateTextView" destination="B5Q-hO-8q3" id="0vA-Qe-v5I"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>

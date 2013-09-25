@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4C7DE117F2879B00C7838C /* LXAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C7DE017F2879B00C7838C /* LXAttributes.m */; };
 		4B7A26A017ED1E550060D3C7 /* SynchroScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A269F17ED1E550060D3C7 /* SynchroScrollView.m */; };
 		4BEE279817E55EA200789E5D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEE279717E55EA200789E5D /* Cocoa.framework */; };
 		4BEE27A217E55EA200789E5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BEE27A017E55EA200789E5D /* InfoPlist.strings */; };
@@ -51,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B4C7DDF17F2879B00C7838C /* LXAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAttributes.h; sourceTree = "<group>"; };
+		4B4C7DE017F2879B00C7838C /* LXAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAttributes.m; sourceTree = "<group>"; };
 		4B7A269E17ED1E550060D3C7 /* SynchroScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchroScrollView.h; sourceTree = "<group>"; };
 		4B7A269F17ED1E550060D3C7 /* SynchroScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchroScrollView.m; sourceTree = "<group>"; };
 		4BEE279417E55EA200789E5D /* LuXun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuXun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,11 +176,13 @@
 		4BEE279D17E55EA200789E5D /* LuXun */ = {
 			isa = PBXGroup;
 			children = (
+				4BEE27AC17E55EA200789E5D /* MainMenu.xib */,
 				4BEE27A917E55EA200789E5D /* AppDelegate.h */,
 				4BEE27AA17E55EA200789E5D /* AppDelegate.m */,
+				4B4C7DDF17F2879B00C7838C /* LXAttributes.h */,
+				4B4C7DE017F2879B00C7838C /* LXAttributes.m */,
 				4B7A269E17ED1E550060D3C7 /* SynchroScrollView.h */,
 				4B7A269F17ED1E550060D3C7 /* SynchroScrollView.m */,
-				4BEE27AC17E55EA200789E5D /* MainMenu.xib */,
 				4BEE27B217E55EA200789E5D /* Images.xcassets */,
 				4BEE27AF17E55EA200789E5D /* LuXun.xcdatamodeld */,
 				4BEE27F017E581F000789E5D /* CoreChineseEngine.h */,
@@ -368,6 +373,7 @@
 				4BEE27B117E55EA200789E5D /* LuXun.xcdatamodeld in Sources */,
 				4BEE27AB17E55EA200789E5D /* AppDelegate.m in Sources */,
 				4B7A26A017ED1E550060D3C7 /* SynchroScrollView.m in Sources */,
+				4B4C7DE117F2879B00C7838C /* LXAttributes.m in Sources */,
 				4BEE27A417E55EA200789E5D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
