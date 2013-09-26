@@ -656,7 +656,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igs-Ac-2xA" customClass="SynchroScrollView">
-                        <rect key="frame" x="14" y="0.0" width="500" height="360"/>
+                        <rect key="frame" x="14" y="-28" width="500" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="zi2-cD-waP">
                             <rect key="frame" x="0.0" y="0.0" width="500" height="360"/>
@@ -685,17 +685,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFf-7L-tPK">
-                        <rect key="frame" x="49" y="308" width="47" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" drawsBackground="YES" usesSingleLineMode="YES" id="u7A-0O-krm">
-                            <font key="font" size="16" name="STHeitiTC-Light"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </textFieldCell>
-                    </textField>
                     <scrollView identifier="Input" fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-2c-M4I" customClass="SynchroScrollView">
-                        <rect key="frame" x="14" y="5" width="500" height="335"/>
+                        <rect key="frame" x="14" y="-29" width="500" height="335"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="ac3-Zb-Gj1">
                             <rect key="frame" x="0.0" y="0.0" width="500" height="335"/>
@@ -734,6 +725,15 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFf-7L-tPK">
+                        <rect key="frame" x="14" y="332" width="47" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" drawsBackground="YES" usesSingleLineMode="YES" id="u7A-0O-krm">
+                            <font key="font" size="16" name="STHeitiTC-Light"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
         </window>

@@ -32,6 +32,9 @@
   
   [templateTextStorage appendAttributedString:attributedString];
   
+  NSTextStorage *inputTextStorage = self.inputTextView.textStorage;
+  
+  [inputTextStorage insertAttributedString:[[NSAttributedString alloc] initWithString:@" " attributes:[LXAttributes attributesForInputTextView]] atIndex:0];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.2think.LuXun" in the user's Application Support directory.
@@ -219,15 +222,16 @@
   
   informationRepository = [[CIMCharacterInformationRepository alloc] initWithScriptType:CIMCharacterInformationRepositoryScriptTypeTraditionalChinese];
   
-  NSString *pinyin = [[informationRepository combinedPinyinReadingsForCharacter:currentCharacter]componentsSeparatedByString:@" "][0];
+  NSArray *pinyins = [[informationRepository combinedPinyinReadingsForCharacter:currentCharacter]componentsSeparatedByString:@" "];
+  NSLog(@"%@", pinyins);
   
 //  NSLog(@"Noted location: %lu, selected: %lu is %@ %@", range.location, (unsigned long)range.length, currentCharacter, pinyin);
  
-  self.hintLabel.title = pinyin;
   
-  if (!pinyin) {
-    [self.hintTextField setHidden:YES];
-  }
+
+  [self.hintTextField setHidden:YES];
+
+  self.hintLabel.title = (pinyins)?[pinyins lastObject]: @"";
   
   NSUInteger retCount;
   NSRectArray rectArray = [self.inputTextView.layoutManager rectArrayForGlyphRange:range withinSelectedGlyphRange:(NSRange){NSNotFound,0} inTextContainer:self.inputTextView.textContainer rectCount:&retCount];
@@ -241,8 +245,8 @@
   CGRect hintFrame = self.hintTextField.frame;
   
   
-  hintFrame.origin.x = 46.0 + rectArray[0].origin.x;
-  hintFrame.origin.y = 310.0 - rectArray[0].origin.y;
+  hintFrame.origin.x = 14.0 + rectArray[0].origin.x;
+  hintFrame.origin.y = 342.0 + 20.0 - rectArray[0].origin.y;
   [self.hintTextField setFrame:hintFrame];
   NSLog(@"Original (%f,%f)", rect.origin.x, rect.origin.y);
   NSLog(@"Converted (%f,%f)", hintFrame.origin.x, hintFrame.origin.y);

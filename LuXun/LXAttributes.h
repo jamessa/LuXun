@@ -11,5 +11,6 @@
 @interface LXAttributes : NSObject
 
 + (NSDictionary *) attributesForTemplateTextView;
++ (NSDictionary *) attributesForInputTextView;
 
 @end

@@ -19,11 +19,31 @@
   [paragraphStyle setLineHeightMultiple:1.0f];
   [paragraphStyle setLineSpacing:48.f];
   
+  
   return @{NSFontAttributeName: font,
            NSFontSizeAttribute:fontSize,
+           NSKernAttributeName: @6.f,
            NSParagraphStyleAttributeName:paragraphStyle,
            NSForegroundColorAttributeName:fontColor
            };
+}
+
++ (NSDictionary *)attributesForInputTextView {
+  NSFont *font = [NSFont fontWithName:@"Heiti TC" size:24.f];
+  NSNumber *fontSize = @48.f;
+  NSColor *fontColor = [NSColor colorWithCalibratedWhite:0.f/255.f alpha:1.f];
+  
+  NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle]mutableCopy];
+  [paragraphStyle setLineHeightMultiple:1.0f];
+  [paragraphStyle setLineSpacing:48.f];
+  
+  return @{NSFontAttributeName: font,
+           NSFontSizeAttribute:fontSize,
+           NSKernAttributeName: @6.f,
+           NSParagraphStyleAttributeName:paragraphStyle,
+           NSForegroundColorAttributeName:fontColor
+           };
+
 }
 
 @end
