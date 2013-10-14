@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
   
 	// Do any additional setup after loading the view, typically from a nib.
   if (!coach) {
@@ -39,30 +39,31 @@
   if (!dictionary) {
     dictionary = [[LXDict alloc] init];
   }
-    self.helperLabel.text = [coach nextMove];
-  NSArray *pinyin = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
-  self.pinyinLabel.text = pinyin[0][@"pinyin"];
+  
+  NSDictionary *coachCharacters = [coach nextMove];
+  self.helperLabel.text = coachCharacters[@"title"];
+  self.pinyinLabel.text = coachCharacters[@"pinyin"];
   
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Flipside View
 
 - (void)flipsideViewControllerDidFinish:(LXFlipsideViewController *)controller
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
-    }
+  if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+    [[segue destinationViewController] setDelegate:self];
+  }
 }
 
 #pragma mark #UITextFieldDelegate
@@ -71,11 +72,11 @@
   NSLog(@"%@", textView.text);
   
   if ([self.helperLabel.text isEqualToString:textView.text]) {
-    NSLog(@"Bingo");
-    self.helperLabel.text = [coach nextMove];
+    
     self.inputTextView.text = @"";
-    NSArray *pinyin = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
-    self.pinyinLabel.text = pinyin[0][@"pinyin"];
+    NSDictionary *coachCharacters = [coach nextMove];
+    self.helperLabel.text = coachCharacters[@"title"];
+    self.pinyinLabel.text = coachCharacters[@"pinyin"];
     
   }
 }

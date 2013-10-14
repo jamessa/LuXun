@@ -10,6 +10,6 @@
 
 @interface LXCoach : NSObject
 
-- (NSString*) nextMove;
+- (NSDictionary*) nextMove;
 
 @end

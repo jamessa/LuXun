@@ -63,12 +63,13 @@
 
 - (void)testCoach {
   LXCoach *coach = [[LXCoach alloc] init];
-  NSString *nextQuestion = [coach nextMove];
-  XCTAssertNotNil(nextQuestion, @"Should have next move");
   
-  // should be able to run many times.
-  for (int i=0; i<=1000; i++) {
-    [coach nextMove];
+  // should be able to run many times in a short time
+  for (int i=0; i<=100; i++) {
+    NSDictionary *nextMove = [coach nextMove];
+    XCTAssertTrue([nextMove objectForKey:@"title"], @"should have title");
+    XCTAssertTrue([nextMove objectForKey:@"pinyin"], @"should have pinyin");
+    
   }
 }
 

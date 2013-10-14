@@ -27,10 +27,10 @@
   return self;
 }
 
-- (NSString *)nextMove{
+- (NSDictionary *)nextMove{
 //  return [trainingSet objectAtIndex:trainingSetIndex++%[trainingSet count]];
   NSArray *array = [dictionary random];
-  return [array firstObject][@"title"];
+  return [array firstObject];
 }
 
 @end
