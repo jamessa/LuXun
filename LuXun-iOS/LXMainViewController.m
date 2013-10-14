@@ -9,6 +9,7 @@
 #import "LXMainViewController.h"
 #import "LXCoach.h"
 #import "LXDict.h"
+#import "NSString+LuXun.h"
 
 @interface LXMainViewController () <UITextViewDelegate> {
   LXCoach *coach;
@@ -27,6 +28,11 @@
 
 @implementation LXMainViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self.inputTextView becomeFirstResponder];
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -42,7 +48,10 @@
   
   NSDictionary *coachCharacters = [coach nextMove];
   self.helperLabel.text = coachCharacters[@"title"];
-  self.pinyinLabel.text = coachCharacters[@"pinyin"];
+  self.pinyinLabel.attributedText = [[NSAttributedString alloc]
+                                     initWithString:coachCharacters[@"pinyin"]
+                                     attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
+  
   
 }
 
@@ -69,15 +78,48 @@
 #pragma mark #UITextFieldDelegate
 
 - (void)textViewDidChange:(UITextView *)textView {
-  NSLog(@"%@", textView.text);
   
   if ([self.helperLabel.text isEqualToString:textView.text]) {
     
     self.inputTextView.text = @"";
     NSDictionary *coachCharacters = [coach nextMove];
     self.helperLabel.text = coachCharacters[@"title"];
-    self.pinyinLabel.text = coachCharacters[@"pinyin"];
+    self.pinyinLabel.attributedText = [[NSAttributedString alloc]
+                                       initWithString:coachCharacters[@"pinyin"]
+                                       attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
+    
     
   }
+  
+  NSRange matchedRange = [self.pinyinLabel.text rangeOfLongestMatchingSinceBeginning:textView.text];
+  
+  NSMutableAttributedString *mutableAttributedString = [self.pinyinLabel.attributedText mutableCopy];
+  
+  [mutableAttributedString setAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.1f alpha:1.0f]}
+                                   range:matchedRange];
+  self.pinyinLabel.attributedText = mutableAttributedString;
+  
+  if (matchedRange.length == self.pinyinLabel.text.length) {
+    NSLog(@"Pinyin reading finished");
+  }
+  
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+  
+  NSString *normalizePinyinString = [self.pinyinLabel.text stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
+  
+  // should be too long
+  if (range.location+range.length >= normalizePinyinString.length) return NO;
+  NSString *shouldBeCharacter = [normalizePinyinString substringWithRange:(NSRange){range.location, text.length}];
+  
+  // if it's a white space, compare to next character
+  if ([shouldBeCharacter isEqualToString:@" "]) {
+    if (range.location+range.length+1 >= normalizePinyinString.length) return NO;
+    shouldBeCharacter = [normalizePinyinString substringWithRange:(NSRange){range.location+1, text.length}];
+  }
+  
+  return YES;
+  
 }
 @end

@@ -30,6 +30,9 @@
 		4BBA6991180A99C2003754E1 /* dict-revised.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */; };
 		4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
 		4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
+		4BF4803C180BD9200093B0D4 /* NSString+LuXun.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */; };
+		4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */; };
+		4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */; };
 		903D52B3E69C4BF28EBF90C0 /* libPods-LuXun-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8008EEEB7A43229C81141B /* libPods-LuXun-iOSTests.a */; };
 		FCB2E6EBB3944C2FB6882086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B381211C23604FE78063F343 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,9 @@
 		4B884FB6180A71A5000E5E1E /* PinyinToZhuyin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PinyinToZhuyin.plist; sourceTree = "<group>"; };
 		4BBA6992180A9AFE003754E1 /* LXDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDict.h; sourceTree = "<group>"; };
 		4BBA6993180A9AFE003754E1 /* LXDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDict.m; sourceTree = "<group>"; };
+		4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LuXun.h"; sourceTree = "<group>"; };
+		4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LuXun.m"; sourceTree = "<group>"; };
+		4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCStringTestCase.m; sourceTree = "<group>"; };
 		AF8008EEEB7A43229C81141B /* libPods-LuXun-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuXun-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B381211C23604FE78063F343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA41960BDD9D4E32AA93CA22 /* Pods-LuXun-iOSTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuXun-iOSTests.xcconfig"; path = "Pods/Pods-LuXun-iOSTests.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 				4BBA6993180A9AFE003754E1 /* LXDict.m */,
 				4B5F7957180B1436008FEFDC /* LXCoach.h */,
 				4B5F7958180B1436008FEFDC /* LXCoach.m */,
+				4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */,
+				4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */,
 			);
 			path = "LuXun-iOS";
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 		4B884FA6180A7176000E5E1E /* LuXun-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */,
 				4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */,
 				4B884FA7180A7176000E5E1E /* Supporting Files */,
 			);
@@ -366,6 +375,7 @@
 			files = (
 				4B884F8B180A7176000E5E1E /* LXAppDelegate.m in Sources */,
 				4B5F7959180B1436008FEFDC /* LXCoach.m in Sources */,
+				4BF4803C180BD9200093B0D4 /* NSString+LuXun.m in Sources */,
 				4B884F94180A7176000E5E1E /* LXMainViewController.m in Sources */,
 				4B884F87180A7176000E5E1E /* main.m in Sources */,
 				4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */,
@@ -379,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B884FAD180A7176000E5E1E /* LuXun_iOSTests.m in Sources */,
+				4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */,
+				4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */,
 				4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

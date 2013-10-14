@@ -29,22 +29,6 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"PinyinToZhuyin" ofType:@"plist"];
-  
-  NSData *plistData = [NSData dataWithContentsOfFile:path];
-  NSString *error;
-  NSPropertyListFormat format;
-  id plist;
-  
-  plist = [NSPropertyListSerialization propertyListFromData:plistData
-                                            mutabilityOption:NSPropertyListImmutable
-                                                      format:&format
-                                            errorDescription:&error];
-  NSLog(@"%@", [plist class]);
-}
-
 - (void)testDictionary {
   
   LXDict *dict = [[LXDict alloc] init];
