@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>10B83760-A14A-43CC-91FE-D60B285A15FB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LuXun-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9DDC4E18-2A60-4A7B-8497-836A28C9C091</key>
+		<string>ssh://github.com/jamessa/LuXun.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LuXun-iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9DDC4E18-2A60-4A7B-8497-836A28C9C091</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/jamessa/LuXun.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9DDC4E18-2A60-4A7B-8497-836A28C9C091</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9DDC4E18-2A60-4A7B-8497-836A28C9C091</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LuXun</string>
+		</dict>
+	</array>
+</dict>
+</plist>

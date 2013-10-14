@@ -7,8 +7,21 @@
 //
 
 #import "LXMainViewController.h"
+#import "LXCoach.h"
+#import "LXDict.h"
 
-@interface LXMainViewController ()
+@interface LXMainViewController () <UITextViewDelegate> {
+  LXCoach *coach;
+  LXDict *dictionary;
+  
+}
+
+
+@property (weak, nonatomic) IBOutlet UILabel *helperLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pinyinLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *inputTextView;
+
 
 @end
 
@@ -17,7 +30,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
 	// Do any additional setup after loading the view, typically from a nib.
+  if (!coach) {
+    coach = [[LXCoach alloc] init];
+  }
+  
+  if (!dictionary) {
+    dictionary = [[LXDict alloc] init];
+  }
+    self.helperLabel.text = [coach nextMove];
+  FMResultSet *s = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
+  [s next];
+  self.pinyinLabel.text = s.resultDictionary[@"pinyin"];
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,4 +66,19 @@
     }
 }
 
+#pragma mark #UITextFieldDelegate
+
+- (void)textViewDidChange:(UITextView *)textView {
+  NSLog(@"%@", textView.text);
+  
+  if ([self.helperLabel.text isEqualToString:textView.text]) {
+    NSLog(@"Bingo");
+    self.helperLabel.text = [coach nextMove];
+    self.inputTextView.text = @"";
+    FMResultSet *s = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
+    [s next];
+    self.pinyinLabel.text = s.resultDictionary[@"pinyin"];
+    
+  }
+}
 @end
