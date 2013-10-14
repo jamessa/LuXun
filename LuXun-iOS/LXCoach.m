@@ -29,9 +29,8 @@
 
 - (NSString *)nextMove{
 //  return [trainingSet objectAtIndex:trainingSetIndex++%[trainingSet count]];
-  FMResultSet *s = [dictionary random];
-  [s next];
-  return s.resultDictionary[@"title"];
+  NSArray *array = [dictionary random];
+  return [array firstObject][@"title"];
 }
 
 @end

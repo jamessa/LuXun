@@ -11,10 +11,10 @@
 
 @interface LXDict : NSObject
 
-- (FMResultSet*) charactersForPinyin:(NSString *)prefix;
+- (NSArray *) charactersForPinyin:(NSString *)prefix;
 
-- (FMResultSet*) pinyinReadingForCharacters:(NSString *)characters;
+- (NSArray *) pinyinReadingForCharacters:(NSString *)characters;
 
-- (FMResultSet*) random;
+- (NSArray *) random;
 
 @end

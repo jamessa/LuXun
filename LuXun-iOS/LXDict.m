@@ -30,40 +30,41 @@
   return self;
 }
 
-- (FMResultSet *)charactersForPinyin:(NSString *)prefix {
+- (NSArray *)executeQuery:(NSString*) queryString {
+  FMResultSet *s = [database executeQuery:queryString];
+  
+  if (!s) {
+    NSLog(@"Query failed: (%d) %@", [database lastErrorCode], [database lastErrorMessage]);
+  }
+  
+  NSMutableArray *returningArray = [[NSMutableArray alloc] init];
+  
+  while ([s next]) {
+    [returningArray addObject:s.resultDictionary];
+  }
+  
+  [s close];
+  return returningArray;
+}
+
+- (NSArray *)charactersForPinyin:(NSString *)prefix {
   
   NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where heteronyms.pinyin like '%@' order by length(title) limit 10", prefix];
-  
-  FMResultSet *s = [database executeQuery:queryString];
-  
-  if (!s) {
-    NSLog(@"Query failed: (%d) %@", [database lastErrorCode], [database lastErrorMessage]);
-  }
-  
-  return s;
+  return [self executeQuery:queryString];
+
 }
 
-- (FMResultSet *)pinyinReadingForCharacters:(NSString *)characters {
+- (NSArray *)pinyinReadingForCharacters:(NSString *)characters {
   NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where title like '%@' order by pinyin limit 5",characters];
   
-  FMResultSet *s = [database executeQuery:queryString];
-  
-  if (!s) {
-    NSLog(@"Query failed: (%d) %@", [database lastErrorCode], [database lastErrorMessage]);
-  }
-  
-  return s;
+  return [self executeQuery:queryString];
+
 }
 
-- (FMResultSet *)random {
+- (NSArray *)random {
   NSString *queryString = @"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where ( entries.id = (abs(random()) % (select max(rowid)+1 from entries)) )";
   
-  FMResultSet *s=[database executeQuery:queryString];
+  return [self executeQuery:queryString];
   
-  if (!s) {
-    NSLog(@"Query failed: (%d) %@", [database lastErrorCode], [database lastErrorMessage]);
-  }
-  
-  return s;
 }
 @end

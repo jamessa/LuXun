@@ -40,9 +40,8 @@
     dictionary = [[LXDict alloc] init];
   }
     self.helperLabel.text = [coach nextMove];
-  FMResultSet *s = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
-  [s next];
-  self.pinyinLabel.text = s.resultDictionary[@"pinyin"];
+  NSArray *pinyin = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
+  self.pinyinLabel.text = pinyin[0][@"pinyin"];
   
 }
 
@@ -75,9 +74,8 @@
     NSLog(@"Bingo");
     self.helperLabel.text = [coach nextMove];
     self.inputTextView.text = @"";
-    FMResultSet *s = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
-    [s next];
-    self.pinyinLabel.text = s.resultDictionary[@"pinyin"];
+    NSArray *pinyin = [dictionary pinyinReadingForCharacters:self.helperLabel.text];
+    self.pinyinLabel.text = pinyin[0][@"pinyin"];
     
   }
 }

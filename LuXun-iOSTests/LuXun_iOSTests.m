@@ -48,21 +48,18 @@
 - (void)testDictionary {
   
   LXDict *dict = [[LXDict alloc] init];
-  FMResultSet *s = [dict charactersForPinyin:@"gǎo %"];
-  [s next];
-  XCTAssertTrue([s.resultDictionary[@"title"] isEqualToString:@"搞丟"], @"should be 搞丟");
-  [s close];
-  s = [dict charactersForPinyin:@"hǎo %"];
-  [s next];
-  XCTAssertTrue([s.resultDictionary[@"title"] isEqualToString:@"好不"], @"the first bi-gram should be 好不");
   
-  
-  s = [dict pinyinReadingForCharacters:@"好"];
-  [s next];
-  XCTAssertTrue([s.resultDictionary[@"pinyin"] isEqualToString:@"hào" ], @"should be hào");
-  [s next];
-  XCTAssertTrue([s.resultDictionary[@"pinyin"] isEqualToString:@"hǎo"], @"should be hǎo");
+  NSArray *gao = [dict charactersForPinyin:@"gǎo %"];
+  XCTAssertTrue([gao[0][@"title"] isEqualToString:@"搞丟"], @"should be 搞丟");
+  NSArray *hao = [dict charactersForPinyin:@"hǎo %"];
+  XCTAssertTrue([hao[0][@"title"] isEqualToString:@"好不"], @"should be 好不");
+ 
+  NSArray *pinyinForHao = [dict pinyinReadingForCharacters:@"好"];
+  XCTAssertTrue([pinyinForHao[0][@"pinyin"] isEqualToString:@"hào"], @"Should be hào");
+  XCTAssertTrue([pinyinForHao[1][@"pinyin"] isEqualToString:@"hǎo"], @"Should be hǎo");
 }
+
+
 
 - (void)testCoach {
   LXCoach *coach = [[LXCoach alloc] init];
