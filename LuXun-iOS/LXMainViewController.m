@@ -110,9 +110,8 @@
                                    range:matchedRange];
   self.pinyinLabel.attributedText = mutableAttributedString;
   
+  // Pinyin finished, log pinyin reading time.
   if (matchedRange.length == self.pinyinLabel.text.length) {
-    // Pinyin finished, log pinyin reading time.
-    NSLog(@"Pinyin reading finished");
     pinyinTime = [NSDate date];
   }
   

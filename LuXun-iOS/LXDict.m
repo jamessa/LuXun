@@ -19,7 +19,6 @@
     return nil;
 
   NSString *pathToDB = [[NSBundle mainBundle] pathForResource:@"dict-revised" ofType:@"sqlite3"];
-  NSLog(@"Path to DB: %@", pathToDB);
   database = [FMDatabase databaseWithPath:pathToDB];
   
   if (!database) {
