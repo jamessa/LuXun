@@ -14,7 +14,10 @@
 @interface LXMainViewController () <UITextViewDelegate> {
   LXCoach *coach;
   LXDict *dictionary;
-  
+  NSDate *startingTime;
+  NSDate *pinyinTime;
+  NSDate *characterTime;
+  NSDictionary *coachCharacters;
 }
 
 
@@ -52,7 +55,7 @@
                                      initWithString:coachCharacters[@"pinyin"]
                                      attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
   
-  
+  startingTime = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,14 +83,16 @@
 - (void)textViewDidChange:(UITextView *)textView {
   
   if ([self.helperLabel.text isEqualToString:textView.text]) {
+    // log total complete time.
+    characterTime = [NSDate date];
+    [coach track:coachCharacters pinyinTime:[pinyinTime timeIntervalSinceDate:startingTime] hanziTime:[characterTime timeIntervalSinceDate:pinyinTime]];
     
     self.inputTextView.text = @"";
-    NSDictionary *coachCharacters = [coach nextMove];
+    coachCharacters = [coach nextMove];
     self.helperLabel.text = coachCharacters[@"title"];
     self.pinyinLabel.attributedText = [[NSAttributedString alloc]
                                        initWithString:coachCharacters[@"pinyin"]
                                        attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
-    
     
   }
   
@@ -100,7 +105,9 @@
   self.pinyinLabel.attributedText = mutableAttributedString;
   
   if (matchedRange.length == self.pinyinLabel.text.length) {
+    // Pinyin finished, log pinyin reading time.
     NSLog(@"Pinyin reading finished");
+    pinyinTime = [NSDate date];
   }
   
 }
@@ -109,8 +116,6 @@
   
   NSString *normalizePinyinString = [self.pinyinLabel.text stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
   
-  // should be too long
-  if (range.location+range.length >= normalizePinyinString.length) return NO;
   NSString *shouldBeCharacter = [normalizePinyinString substringWithRange:(NSRange){range.location, text.length}];
   
   // if it's a white space, compare to next character

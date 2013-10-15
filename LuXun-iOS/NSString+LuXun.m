@@ -15,8 +15,6 @@
   
   NSUInteger i;
   for (i=0; i<MIN([normalizeString length],[characters length]); i++){
-    NSLog(@"Comparing %d, %d", [normalizeString characterAtIndex:i], [characters characterAtIndex:i]);
-    
     // Special Case for Six-Per-Em Space http://en.wikipedia.org/wiki/Space_(punctuation)
     if ([characters characterAtIndex:i]==0x2006 && [normalizeString characterAtIndex:i]==0x20)
       continue;

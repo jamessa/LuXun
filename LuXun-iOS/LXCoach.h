@@ -11,5 +11,6 @@
 @interface LXCoach : NSObject
 
 - (NSDictionary*) nextMove;
+- (void) track:(NSDictionary*)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2;
 
 @end

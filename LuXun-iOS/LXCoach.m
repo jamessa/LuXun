@@ -33,4 +33,7 @@
   return [array firstObject];
 }
 
+- (void)track:(NSDictionary *)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2 {
+  NSLog(@"%@ %f %f", currentCharacter[@"title"], time1, time2);
+}
 @end

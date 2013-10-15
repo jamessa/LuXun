@@ -50,10 +50,10 @@
   
   // should be able to run many times in a short time
   for (int i=0; i<=100; i++) {
-    NSDictionary *nextMove = [coach nextMove];
-    XCTAssertTrue([nextMove objectForKey:@"title"], @"should have title");
-    XCTAssertTrue([nextMove objectForKey:@"pinyin"], @"should have pinyin");
-    
+    NSDictionary *currentPlay = [coach nextMove];
+    XCTAssertTrue([currentPlay objectForKey:@"title"], @"should have title");
+    XCTAssertTrue([currentPlay objectForKey:@"pinyin"], @"should have pinyin");
+    [coach track:currentPlay pinyinTime:5.0 hanziTime:10.0];
   }
 }
 
