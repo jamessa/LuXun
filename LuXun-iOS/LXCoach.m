@@ -20,7 +20,7 @@
   self = [super init];
   if (!self)
     return nil;
-  
+
   dictionary = [[LXDict alloc] init];
   trainingSet = @[@"八",@"趴",@"嗎",@"發"];
   trainingSetIndex = 0;
@@ -30,7 +30,8 @@
 - (NSDictionary *)nextMove{
 //  return [trainingSet objectAtIndex:trainingSetIndex++%[trainingSet count]];
   NSArray *array = [dictionary random];
-  return [array firstObject];
+  array = [dictionary charactersForPinyin:@"%ǜ%"];
+  return [array objectAtIndex:(rand()%[array count]) ];
 }
 
 - (void)track:(NSDictionary *)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2 {

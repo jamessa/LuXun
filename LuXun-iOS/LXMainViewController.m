@@ -31,6 +31,20 @@
 
 @implementation LXMainViewController
 
+#pragma mark - This Controller only
+
+- (void)nextTrial {
+  coachCharacters = [coach nextMove];
+  self.helperLabel.text = coachCharacters[@"title"];
+  self.pinyinLabel.attributedText = [[NSAttributedString alloc]
+                                     initWithString:coachCharacters[@"pinyin"]
+                                     attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
+  startingTime = [NSDate date];
+  pinyinTime = characterTime = nil;
+}
+
+#pragma mark - ViewController Delegate
+
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.inputTextView becomeFirstResponder];
@@ -49,13 +63,7 @@
     dictionary = [[LXDict alloc] init];
   }
   
-  NSDictionary *coachCharacters = [coach nextMove];
-  self.helperLabel.text = coachCharacters[@"title"];
-  self.pinyinLabel.attributedText = [[NSAttributedString alloc]
-                                     initWithString:coachCharacters[@"pinyin"]
-                                     attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
-  
-  startingTime = [NSDate date];
+  [self nextTrial];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +88,8 @@
 
 #pragma mark #UITextFieldDelegate
 
+
+
 - (void)textViewDidChange:(UITextView *)textView {
   
   if ([self.helperLabel.text isEqualToString:textView.text]) {
@@ -88,12 +98,8 @@
     [coach track:coachCharacters pinyinTime:[pinyinTime timeIntervalSinceDate:startingTime] hanziTime:[characterTime timeIntervalSinceDate:pinyinTime]];
     
     self.inputTextView.text = @"";
-    coachCharacters = [coach nextMove];
-    self.helperLabel.text = coachCharacters[@"title"];
-    self.pinyinLabel.attributedText = [[NSAttributedString alloc]
-                                       initWithString:coachCharacters[@"pinyin"]
-                                       attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
-    
+    [self nextTrial];
+
   }
   
   NSRange matchedRange = [self.pinyinLabel.text rangeOfLongestMatchingSinceBeginning:textView.text];
@@ -112,19 +118,4 @@
   
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-  
-  NSString *normalizePinyinString = [self.pinyinLabel.text stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
-  
-  NSString *shouldBeCharacter = [normalizePinyinString substringWithRange:(NSRange){range.location, text.length}];
-  
-  // if it's a white space, compare to next character
-  if ([shouldBeCharacter isEqualToString:@" "]) {
-    if (range.location+range.length+1 >= normalizePinyinString.length) return NO;
-    shouldBeCharacter = [normalizePinyinString substringWithRange:(NSRange){range.location+1, text.length}];
-  }
-  
-  return YES;
-  
-}
 @end
