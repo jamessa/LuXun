@@ -11,7 +11,8 @@
 @implementation NSString (LuXun)
 
 - (NSRange)rangeOfLongestMatchingSinceBeginning:(NSString *)characters {
-  NSString *normalizeString = [self stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
+  NSString *preprocessString = [self stringByReplacingOccurrencesOfString:@"ǜ" withString:@"v"];
+  NSString *normalizeString = [preprocessString stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
   
   NSUInteger i;
   for (i=0; i<MIN([normalizeString length],[characters length]); i++){

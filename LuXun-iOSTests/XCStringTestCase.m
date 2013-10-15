@@ -35,6 +35,10 @@
   XCTAssertEqual([pinyinString rangeOfLongestMatchingSinceBeginning:@"g"].length, (NSUInteger)0, @"Zero character should be matched");
   XCTAssertEqual([pinyinString rangeOfLongestMatchingSinceBeginning:@"xun\u2006fu"].length, (NSUInteger)6, @"Six character should be matched.");
   
+  // lǜ -> lv
+  NSString *greenPinyin = @"lǜ";
+  XCTAssertEqual([greenPinyin rangeOfLongestMatchingSinceBeginning:@"lv"].length, (NSUInteger)2, @"Two character should be matched.");
+  
 }
 
 @end
