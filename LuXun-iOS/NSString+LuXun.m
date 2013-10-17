@@ -11,8 +11,20 @@
 @implementation NSString (LuXun)
 
 - (NSRange)rangeOfLongestMatchingSinceBeginning:(NSString *)characters {
-  NSString *preprocessString = [self stringByReplacingOccurrencesOfString:@"ǜ" withString:@"v"];
-  NSString *normalizeString = [preprocessString stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
+  // Special Case
+  NSArray *specialCases =  @[@"ü", @"ǖ", @"ǘ", @"ǚ", @"ǜ"];
+  NSMutableString *preprocessedString = [self mutableCopy];
+
+  for (NSString *specialCase in specialCases) {
+    [preprocessedString replaceOccurrencesOfString:specialCase
+                                        withString:@"v"
+                                           options:0
+                                             range:(NSRange){0,[preprocessedString length]}];
+  }
+  
+  NSString *normalizeString = [preprocessedString stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
+  
+  NSLog(@"%@", normalizeString);
   
   NSUInteger i;
   for (i=0; i<MIN([normalizeString length],[characters length]); i++){

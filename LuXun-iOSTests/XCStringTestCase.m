@@ -38,6 +38,9 @@
   // lǜ -> lv
   NSString *greenPinyin = @"lǜ";
   XCTAssertEqual([greenPinyin rangeOfLongestMatchingSinceBeginning:@"lv"].length, (NSUInteger)2, @"Two character should be matched.");
+  NSString *anotherPinyin = @"lü";
+  XCTAssertEqual([anotherPinyin rangeOfLongestMatchingSinceBeginning:@"lv"].length, (NSUInteger)2, @"Two character should be matched.");
+  
   
 }
 
