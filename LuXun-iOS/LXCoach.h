@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LXStrategy <NSObject>
+
+@required
+- (NSDictionary *) nextMove;
+
+@end
+
 @interface LXCoach : NSObject
+
+@property (strong, nonatomic) id<LXStrategy> strategy;
 
 - (NSDictionary*) nextMove;
 - (void) track:(NSDictionary*)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2;

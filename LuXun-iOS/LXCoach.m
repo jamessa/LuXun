@@ -9,29 +9,46 @@
 #import "LXCoach.h"
 #import "LXDict.h"
 
+@interface LXRandomStragegy : NSObject <LXStrategy>
 
-@implementation LXCoach {
+
+@end
+
+@implementation LXRandomStragegy {
   LXDict *dictionary;
-  NSArray *trainingSet;
-  NSUInteger trainingSetIndex;
 }
 
 - (id)init {
   self = [super init];
   if (!self)
     return nil;
-
+  
   dictionary = [[LXDict alloc] init];
-  trainingSet = @[@"八",@"趴",@"嗎",@"發"];
-  trainingSetIndex = 0;
+  return self;
+}
+
+- (NSDictionary *)nextMove {
+  NSArray *array = [dictionary random];
+  return [array objectAtIndex:(rand()%[array count])];
+}
+
+@end
+
+@implementation LXCoach {
+}
+
+- (id)init {
+  self = [super init];
+  if (!self)
+    return nil;
+  
+  // default strategy
+  self.strategy = [[LXRandomStragegy alloc] init];
   return self;
 }
 
 - (NSDictionary *)nextMove{
-//  return [trainingSet objectAtIndex:trainingSetIndex++%[trainingSet count]];
-  NSArray *array = [dictionary random];
-  array = [dictionary charactersForPinyin:@"%ǜ%"];
-  return [array objectAtIndex:(rand()%[array count]) ];
+  return [self.strategy nextMove];
 }
 
 - (void)track:(NSDictionary *)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2 {

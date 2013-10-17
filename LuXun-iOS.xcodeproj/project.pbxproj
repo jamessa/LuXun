@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B5F7959180B1436008FEFDC /* LXCoach.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F7958180B1436008FEFDC /* LXCoach.m */; };
+		4B85DB39180FDBED00C2849D /* LXCoachAndStrategyTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */; };
 		4B884F79180A7176000E5E1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F78180A7176000E5E1E /* Foundation.framework */; };
 		4B884F7B180A7176000E5E1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F7A180A7176000E5E1E /* CoreGraphics.framework */; };
 		4B884F7D180A7176000E5E1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F7C180A7176000E5E1E /* UIKit.framework */; };
@@ -53,6 +54,7 @@
 		4B5F7957180B1436008FEFDC /* LXCoach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCoach.h; sourceTree = "<group>"; };
 		4B5F7958180B1436008FEFDC /* LXCoach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoach.m; sourceTree = "<group>"; };
 		4B78174E180A93D1001A45B8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoachAndStrategyTestCase.m; sourceTree = "<group>"; };
 		4B884F75180A7176000E5E1E /* LuXun-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuXun-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B884F78180A7176000E5E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B884F7A180A7176000E5E1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +192,7 @@
 		4B884FA6180A7176000E5E1E /* LuXun-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */,
 				4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */,
 				4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */,
 				4B884FA7180A7176000E5E1E /* Supporting Files */,
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B85DB39180FDBED00C2849D /* LXCoachAndStrategyTestCase.m in Sources */,
 				4B884FAD180A7176000E5E1E /* LuXun_iOSTests.m in Sources */,
 				4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */,
 				4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */,
