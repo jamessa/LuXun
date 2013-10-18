@@ -18,13 +18,11 @@
   for (NSString *specialCase in specialCases) {
     [preprocessedString replaceOccurrencesOfString:specialCase
                                         withString:@"v"
-                                           options:0
+                                           options:NSLiteralSearch
                                              range:(NSRange){0,[preprocessedString length]}];
   }
   
   NSString *normalizeString = [preprocessedString stringByFoldingWithOptions:NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch locale:nil];
-  
-  NSLog(@"%@", normalizeString);
   
   NSUInteger i;
   for (i=0; i<MIN([normalizeString length],[characters length]); i++){

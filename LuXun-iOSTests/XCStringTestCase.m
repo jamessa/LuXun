@@ -41,7 +41,8 @@
   NSString *anotherPinyin = @"lü";
   XCTAssertEqual([anotherPinyin rangeOfLongestMatchingSinceBeginning:@"lv"].length, (NSUInteger)2, @"Two character should be matched.");
   
-  
+  NSString *huantengPinyin = @"huān téng";
+  XCTAssertEqual([huantengPinyin rangeOfLongestMatchingSinceBeginning:@"huan teng"].length, (NSUInteger)9, @"Nine characters should be matched.");
 }
 
 @end
