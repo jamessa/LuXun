@@ -10,6 +10,7 @@
 #import "LXCoach.h"
 #import "LXDict.h"
 #import "NSString+LuXun.h"
+#import "LXPinyinLabel.h"
 
 @interface LXMainViewController () <UITextViewDelegate> {
   LXCoach *coach;
@@ -22,8 +23,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *helperLabel;
-@property (weak, nonatomic) IBOutlet UILabel *pinyinLabel;
-
+@property (weak, nonatomic) IBOutlet LXPinyinLabel *pinyinLabel;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 
 
@@ -36,9 +36,7 @@
 - (void)nextTrial {
   coachCharacters = [coach nextMove];
   self.helperLabel.text = coachCharacters[@"title"];
-  self.pinyinLabel.attributedText = [[NSAttributedString alloc]
-                                     initWithString:coachCharacters[@"pinyin"]
-                                     attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
+  self.pinyinLabel.text = coachCharacters[@"pinyin"];
   startingTime = [NSDate date];
   pinyinTime = characterTime = nil;
 }
@@ -86,9 +84,7 @@
   }
 }
 
-#pragma mark #UITextFieldDelegate
-
-
+#pragma mark - UITextFieldDelegate
 
 - (void)textViewDidChange:(UITextView *)textView {
   
@@ -99,22 +95,10 @@
     
     self.inputTextView.text = @"";
     [self nextTrial];
-
+    
   }
   
-  NSRange matchedRange = [self.pinyinLabel.text rangeOfLongestMatchingSinceBeginning:textView.text];
-  
-  NSMutableAttributedString *mutableAttributedString = [self.pinyinLabel.attributedText mutableCopy];
-  
-  [mutableAttributedString setAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.1f alpha:1.0f]}
-                                   range:matchedRange];
-  self.pinyinLabel.attributedText = mutableAttributedString;
-  
-  // Pinyin finished, log pinyin reading time.
-  if (matchedRange.length == self.pinyinLabel.text.length) {
-    pinyinTime = [NSDate date];
-  }
+  self.pinyinLabel.text2 = textView.text;
   
 }
-
 @end

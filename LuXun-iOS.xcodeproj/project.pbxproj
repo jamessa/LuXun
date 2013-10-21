@@ -28,6 +28,8 @@
 		4B884FAB180A7176000E5E1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B884FA9180A7176000E5E1E /* InfoPlist.strings */; };
 		4B884FAD180A7176000E5E1E /* LuXun_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */; };
 		4B884FB7180A71A5000E5E1E /* PinyinToZhuyin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B884FB6180A71A5000E5E1E /* PinyinToZhuyin.plist */; };
+		4B8DCDDC18117BFD007056CE /* LXPinyinLabeTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DCDDB18117BFD007056CE /* LXPinyinLabeTestCase.m */; };
+		4B91739E18116DCC00598265 /* LXPinyinLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91739D18116DCC00598265 /* LXPinyinLabel.m */; };
 		4BBA6991180A99C2003754E1 /* dict-revised.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */; };
 		4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
 		4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
@@ -79,6 +81,9 @@
 		4B884FAA180A7176000E5E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuXun_iOSTests.m; sourceTree = "<group>"; };
 		4B884FB6180A71A5000E5E1E /* PinyinToZhuyin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PinyinToZhuyin.plist; sourceTree = "<group>"; };
+		4B8DCDDB18117BFD007056CE /* LXPinyinLabeTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPinyinLabeTestCase.m; sourceTree = "<group>"; };
+		4B91739C18116DCC00598265 /* LXPinyinLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXPinyinLabel.h; sourceTree = "<group>"; };
+		4B91739D18116DCC00598265 /* LXPinyinLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPinyinLabel.m; sourceTree = "<group>"; };
 		4BBA6992180A9AFE003754E1 /* LXDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDict.h; sourceTree = "<group>"; };
 		4BBA6993180A9AFE003754E1 /* LXDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDict.m; sourceTree = "<group>"; };
 		4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LuXun.h"; sourceTree = "<group>"; };
@@ -172,6 +177,8 @@
 				4B5F7958180B1436008FEFDC /* LXCoach.m */,
 				4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */,
 				4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */,
+				4B91739C18116DCC00598265 /* LXPinyinLabel.h */,
+				4B91739D18116DCC00598265 /* LXPinyinLabel.m */,
 			);
 			path = "LuXun-iOS";
 			sourceTree = "<group>";
@@ -192,10 +199,11 @@
 		4B884FA6180A7176000E5E1E /* LuXun-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */,
-				4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */,
 				4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */,
+				4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */,
+				4B8DCDDB18117BFD007056CE /* LXPinyinLabeTestCase.m */,
 				4B884FA7180A7176000E5E1E /* Supporting Files */,
+				4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */,
 			);
 			path = "LuXun-iOSTests";
 			sourceTree = "<group>";
@@ -381,6 +389,7 @@
 				4BF4803C180BD9200093B0D4 /* NSString+LuXun.m in Sources */,
 				4B884F94180A7176000E5E1E /* LXMainViewController.m in Sources */,
 				4B884F87180A7176000E5E1E /* main.m in Sources */,
+				4B91739E18116DCC00598265 /* LXPinyinLabel.m in Sources */,
 				4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */,
 				4B884F97180A7176000E5E1E /* LXFlipsideViewController.m in Sources */,
 				4B884F91180A7176000E5E1E /* LuXun_iOS.xcdatamodeld in Sources */,
@@ -393,6 +402,7 @@
 			files = (
 				4B85DB39180FDBED00C2849D /* LXCoachAndStrategyTestCase.m in Sources */,
 				4B884FAD180A7176000E5E1E /* LuXun_iOSTests.m in Sources */,
+				4B8DCDDC18117BFD007056CE /* LXPinyinLabeTestCase.m in Sources */,
 				4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */,
 				4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */,
 				4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */,
