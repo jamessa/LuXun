@@ -12,13 +12,14 @@
 @implementation LXPinyinLabel {
   NSDate *startTime;
   NSMutableArray *lapTimes;
+  NSAttributeDescription *style;
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
   self = [super initWithFrame:frame];
   if (self) {
-    // Initialization code
+    // Initialization code [self.attributedText att]
   }
   return self;
 }
@@ -41,7 +42,7 @@
   self.attributedText = [[NSAttributedString alloc]
                          initWithString:text
                          attributes:
-  @{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.95f alpha:1.0f]}];
+  @{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.9f alpha:1.0f]}];
 }
 
 - (void)setText2:(NSString *)text {
