@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="History" representedClassName="LXHistory" syncable="YES">
+        <attribute name="reading" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="responseTime" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <fetchRequest name="responseTimeForPinyin" entity="History" predicateString="reading == $READING"/>
+    <elements>
+        <element name="History" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
 </model>

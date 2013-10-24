@@ -33,6 +33,8 @@
 		4BBA6991180A99C2003754E1 /* dict-revised.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */; };
 		4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
 		4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
+		4BE3D4001818FCB00064CC31 /* LXHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D3FF1818FCB00064CC31 /* LXHistory.m */; };
+		4BE3D4021819003E0064CC31 /* LXCoreDataTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D4011819003E0064CC31 /* LXCoreDataTestCase.m */; };
 		4BF4803C180BD9200093B0D4 /* NSString+LuXun.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */; };
 		4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */; };
 		4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */; };
@@ -86,6 +88,9 @@
 		4B91739D18116DCC00598265 /* LXPinyinLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPinyinLabel.m; sourceTree = "<group>"; };
 		4BBA6992180A9AFE003754E1 /* LXDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDict.h; sourceTree = "<group>"; };
 		4BBA6993180A9AFE003754E1 /* LXDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDict.m; sourceTree = "<group>"; };
+		4BE3D3FE1818FCB00064CC31 /* LXHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHistory.h; sourceTree = "<group>"; };
+		4BE3D3FF1818FCB00064CC31 /* LXHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHistory.m; sourceTree = "<group>"; };
+		4BE3D4011819003E0064CC31 /* LXCoreDataTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoreDataTestCase.m; sourceTree = "<group>"; };
 		4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LuXun.h"; sourceTree = "<group>"; };
 		4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LuXun.m"; sourceTree = "<group>"; };
 		4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCStringTestCase.m; sourceTree = "<group>"; };
@@ -170,6 +175,8 @@
 				4B884F96180A7176000E5E1E /* LXFlipsideViewController.m */,
 				4B884F98180A7176000E5E1E /* Images.xcassets */,
 				4B884F8F180A7176000E5E1E /* LuXun_iOS.xcdatamodeld */,
+				4BE3D3FE1818FCB00064CC31 /* LXHistory.h */,
+				4BE3D3FF1818FCB00064CC31 /* LXHistory.m */,
 				4B884F81180A7176000E5E1E /* Supporting Files */,
 				4BBA6992180A9AFE003754E1 /* LXDict.h */,
 				4BBA6993180A9AFE003754E1 /* LXDict.m */,
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */,
+				4BE3D4011819003E0064CC31 /* LXCoreDataTestCase.m */,
 				4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */,
 				4B8DCDDB18117BFD007056CE /* LXPinyinLabeTestCase.m */,
 				4B884FA7180A7176000E5E1E /* Supporting Files */,
@@ -386,6 +394,7 @@
 			files = (
 				4B884F8B180A7176000E5E1E /* LXAppDelegate.m in Sources */,
 				4B5F7959180B1436008FEFDC /* LXCoach.m in Sources */,
+				4BE3D4001818FCB00064CC31 /* LXHistory.m in Sources */,
 				4BF4803C180BD9200093B0D4 /* NSString+LuXun.m in Sources */,
 				4B884F94180A7176000E5E1E /* LXMainViewController.m in Sources */,
 				4B884F87180A7176000E5E1E /* main.m in Sources */,
@@ -404,6 +413,7 @@
 				4B884FAD180A7176000E5E1E /* LuXun_iOSTests.m in Sources */,
 				4B8DCDDC18117BFD007056CE /* LXPinyinLabeTestCase.m in Sources */,
 				4BF48040180BD9AA0093B0D4 /* XCStringTestCase.m in Sources */,
+				4BE3D4021819003E0064CC31 /* LXCoreDataTestCase.m in Sources */,
 				4BF48041180BD9B90093B0D4 /* NSString+LuXun.m in Sources */,
 				4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */,
 			);
