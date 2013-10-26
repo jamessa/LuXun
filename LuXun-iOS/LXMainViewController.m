@@ -11,6 +11,7 @@
 #import "LXDict.h"
 #import "NSString+LuXun.h"
 #import "LXPinyinLabel.h"
+#import "LXStatisticViewController.h"
 
 @interface LXMainViewController () <UITextViewDelegate> {
   LXCoach *coach;
@@ -79,10 +80,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-  if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-    [[segue destinationViewController] setDelegate:self];
+  if ([[segue identifier] isEqualToString:@"showStatistic"]) {
+    [(LXStatisticViewController *)[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
   }
 }
+
+#pragma mark - StatisticViewController
+
 
 #pragma mark - UITextFieldDelegate
 
