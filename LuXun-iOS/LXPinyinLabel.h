@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^matchingBlockType)(NSString* reading, NSTimeInterval timeInterval);
+
 @interface LXPinyinLabel : UILabel
 
 @property (strong, nonatomic) NSString *text2;
 @property (strong, nonatomic) NSMutableDictionary *characterTimes;
+@property (strong, nonatomic) matchingBlockType matchedBlock;
 
 @end

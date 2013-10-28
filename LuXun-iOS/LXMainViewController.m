@@ -15,18 +15,11 @@
 
 @interface LXMainViewController () <UITextViewDelegate> {
   LXCoach *coach;
-  LXDict *dictionary;
-  NSDate *startingTime;
-  NSDate *pinyinTime;
-  NSDate *characterTime;
-  NSDictionary *coachCharacters;
 }
-
 
 @property (weak, nonatomic) IBOutlet UILabel *helperLabel;
 @property (weak, nonatomic) IBOutlet LXPinyinLabel *pinyinLabel;
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
-
 
 @end
 
@@ -35,11 +28,10 @@
 #pragma mark - This Controller only
 
 - (void)nextTrial {
-  coachCharacters = [coach nextMove];
+  NSDictionary *coachCharacters = [coach nextMove];
   self.helperLabel.text = coachCharacters[@"title"];
   self.pinyinLabel.text = coachCharacters[@"pinyin"];
-  startingTime = [NSDate date];
-  pinyinTime = characterTime = nil;
+  self.inputTextView.text = @"";
 }
 
 #pragma mark - ViewController Delegate
@@ -47,22 +39,21 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.inputTextView becomeFirstResponder];
+  [self nextTrial];
 }
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-	// Do any additional setup after loading the view, typically from a nib.
-  if (!coach) {
+ if (!coach) {
     coach = [[LXCoach alloc] init];
   }
   
-  if (!dictionary) {
-    dictionary = [[LXDict alloc] init];
-  }
+  self.pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval) {
+    [coach trackTimeInterval: timeInterval forPinyin: reading];
+  };
   
-  [self nextTrial];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +62,7 @@
   // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Flipside View
+#pragma mark - `Flipside View
 
 - (void)flipsideViewControllerDidFinish:(LXFlipsideViewController *)controller
 {
@@ -93,13 +84,8 @@
 - (void)textViewDidChange:(UITextView *)textView {
   
   if ([self.helperLabel.text isEqualToString:textView.text]) {
-    // log total complete time.
-    characterTime = [NSDate date];
-    [coach track:coachCharacters pinyinTime:[pinyinTime timeIntervalSinceDate:startingTime] hanziTime:[characterTime timeIntervalSinceDate:pinyinTime]];
-    
-    self.inputTextView.text = @"";
+    // some bingo animation here.
     [self nextTrial];
-    
   }
   
   self.pinyinLabel.text2 = textView.text;

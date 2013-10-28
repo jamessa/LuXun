@@ -20,6 +20,6 @@
 @property (strong, nonatomic) id<LXStrategy> strategy;
 
 - (NSDictionary*) nextMove;
-- (void) track:(NSDictionary*)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2;
+- (void) trackTimeInterval: (NSTimeInterval)timeInterval forPinyin: (NSString *)reading;
 
 @end

@@ -63,6 +63,9 @@
       NSTimeInterval beginTime = [lapTimes[pinyinRange.location+1] doubleValue];
       NSTimeInterval endTime = [lapTimes[pinyinRange.location+pinyinRange.length] doubleValue];
       self.characterTimes[pinyin] = @(fabs(endTime-beginTime));
+      if (_matchedBlock) {
+        _matchedBlock(pinyin,fabs(endTime-beginTime));
+      }
     }
     
   }
