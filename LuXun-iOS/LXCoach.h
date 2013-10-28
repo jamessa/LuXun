@@ -20,6 +20,6 @@
 @property (strong, nonatomic) id<LXStrategy> strategy;
 
 - (NSDictionary*) nextMove;
-- (void) trackTimeInterval: (NSTimeInterval)timeInterval forPinyin: (NSString *)reading;
+- (void) trackTimeInterval: (NSTimeInterval)timeInterval forPinyin: (NSString *)reading usingContext:(NSManagedObjectContext*)context;
 
 @end

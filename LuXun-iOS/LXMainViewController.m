@@ -51,7 +51,7 @@
   }
   
   self.pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval) {
-    [coach trackTimeInterval: timeInterval forPinyin: reading];
+    [coach trackTimeInterval: timeInterval forPinyin: reading usingContext:self.managedObjectContext];
   };
   
 }

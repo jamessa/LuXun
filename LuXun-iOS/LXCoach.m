@@ -8,6 +8,7 @@
 
 #import "LXCoach.h"
 #import "LXDict.h"
+#import "LXHistory+Addons.h"
 
 @interface LXRandomStragegy : NSObject <LXStrategy>
 
@@ -51,11 +52,7 @@
   return [self.strategy nextMove];
 }
 
-- (void)track:(NSDictionary *)currentCharacter pinyinTime:(float)time1 hanziTime:(float)time2 {
-  NSLog(@"%@ %f %f", currentCharacter[@"title"], time1, time2);
-}
-
-- (void)trackTimeInterval:(NSTimeInterval)timeInterval forPinyin:(NSString *)reading {
-  NSLog(@"Coach: %@ => %f", reading, timeInterval);
+- (void)trackTimeInterval:(NSTimeInterval)timeInterval forPinyin:(NSString *)reading usingContext:(NSManagedObjectContext *)context {
+  [LXHistory trackTimeInterval:timeInterval forReading:reading withContext:context];
 }
 @end

@@ -7,16 +7,16 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "LXHistory.h"
+#import "LXHistory+Addons.h"
 #import "LXAppDelegate.h"
 
-@interface LXCoreDataTestCase : XCTestCase{
+@interface LXHistoryTestCase : XCTestCase{
   NSManagedObjectContext *context;
 }
 
 @end
 
-@implementation LXCoreDataTestCase {
+@implementation LXHistoryTestCase {
   NSString *testRunString;
 }
 
@@ -26,6 +26,11 @@
   testRunString = [NSString stringWithFormat:@"TestRun-%d",rand()];
   
   context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  
+  for (int i=0; i<10; i++) {
+    [LXHistory trackTimeInterval:5.0-i*0.2 forReading:testRunString withContext:context];
+  }
+  
 }
 
 - (void)tearDown
@@ -34,26 +39,7 @@
   [super tearDown];
 }
 
-- (void)testInsert
-{
-  for (int i=0; i<50; i++) {
-    LXHistory *history = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:context];
-    history.timestamp = [NSDate date];
-    history.reading = testRunString;
-    history.responseTime = @(5.0-i*0.1);
-    [context save:nil];
-  }
-}
-
 - (void)testLastFiveResult {
-  for (int i=0; i<10; i++) {
-    LXHistory *history = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:context];
-    history.timestamp = [NSDate date];
-    history.reading = testRunString;
-    history.responseTime = @(5.0-i*0.2);
-    [context save:nil];
-  }
-  
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
   NSEntityDescription *entity = [NSEntityDescription entityForName:@"History" inManagedObjectContext:context];
   [fetchRequest setEntity:entity];
@@ -82,14 +68,6 @@
 }
 
 - (void)testStoredProcedure {
-  for (int i=0; i<10; i++) {
-    LXHistory *history = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:context];
-    history.timestamp = [NSDate date];
-    history.reading = testRunString;
-    history.responseTime = @(5.0-i*0.2);
-    [context save:nil];
-  }
-
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
   
   NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"responseTimeForPinyin"
