@@ -62,7 +62,7 @@
   // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - `Flipside View
+#pragma mark - Flipside View
 
 - (void)flipsideViewControllerDidFinish:(LXFlipsideViewController *)controller
 {

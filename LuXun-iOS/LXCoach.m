@@ -9,11 +9,7 @@
 #import "LXCoach.h"
 #import "LXDict.h"
 #import "LXHistory+Addons.h"
-
-@interface LXRandomStragegy : NSObject <LXStrategy>
-
-
-@end
+#import "LXMemory+Addons.h"
 
 @implementation LXRandomStragegy {
   LXDict *dictionary;
@@ -28,7 +24,11 @@
   return self;
 }
 
-- (NSDictionary *)nextMove {
+- (NSDictionary *)nextMove:(NSArray*)memory {
+  if([memory count]){
+    return @{@"pinyin":@"hào"};
+  }
+  
   NSArray *array = [dictionary random];
   return [array objectAtIndex:(rand()%[array count])];
 }
@@ -36,6 +36,7 @@
 @end
 
 @implementation LXCoach {
+  NSMutableArray *memory;
 }
 
 - (id)init {
@@ -45,11 +46,23 @@
   
   // default strategy
   self.strategy = [[LXRandomStragegy alloc] init];
+  memory = [@[] mutableCopy];
   return self;
 }
 
+- (void) reset {
+  [LXMemory reset];
+  
+  LXDict *dict = [[LXDict alloc] init];
+  [LXMemory fillWithMemories:[dict listAllPinyins]];
+}
+
+- (void)addItems:(NSArray *)items {
+  [memory addObjectsFromArray:items];
+}
+
 - (NSDictionary *)nextMove{
-  return [self.strategy nextMove];
+  return [self.strategy nextMove:memory];
 }
 
 - (void)trackTimeInterval:(NSTimeInterval)timeInterval forPinyin:(NSString *)reading usingContext:(NSManagedObjectContext *)context {

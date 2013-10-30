@@ -17,4 +17,6 @@
 
 - (NSArray *) random;
 
+- (NSArray *) listAllPinyins;
+
 @end

@@ -66,4 +66,8 @@
   return [self executeQuery:queryString];
   
 }
+
+- (NSArray *)listAllPinyins {
+  return [self executeQuery:@"select * from pinyins order by count DESC;"];
+}
 @end
