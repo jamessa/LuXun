@@ -31,19 +31,18 @@
 }
 
 + (void)fillWithMemories:(NSArray *)memories {
+  /* Accumulated count is used here to easily find out reading weight
+    
+   */
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   
-  double weightMAX = 0;
+  NSInteger total = [[memories valueForKeyPath:@"@sum.count"] integerValue];
+  NSInteger accumulate = 0;
   for (NSDictionary *item in memories) {
-    
     LXMemory *memory = [NSEntityDescription insertNewObjectForEntityForName:@"Memory" inManagedObjectContext:context];
     memory.reading = item[@"pinyin"];
-    
-    if (weightMAX == 0) {
-      weightMAX = [item[@"count"] doubleValue];
-    }
-    
-    memory.weight = @([item[@"count"] doubleValue]/weightMAX);
+    accumulate += [item[@"count"] doubleValue];
+    memory.weight = @((double)accumulate/total);
     [context save:nil];
   }
 }
