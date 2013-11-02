@@ -89,15 +89,17 @@
   
   NSFetchRequest *fetchAll = [model fetchRequestFromTemplateWithName:@"allMemories" substitutionVariables:nil];
   
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"progress" ascending:NO];
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
   
   [fetchAll setSortDescriptors:@[sortDescriptor]];
   
   NSArray *fetchedObject = [context executeFetchRequest:fetchAll error:nil];
   
   XCTAssertTrue([[fetchedObject valueForKeyPath:@"@count.reading"] integerValue] == (NSUInteger)1421, @"Should be 1421.");
-  LXMemory *firstMemory = [fetchedObject objectAtIndex:0];
-  XCTAssertEqualWithAccuracy([firstMemory.weight doubleValue], 1.0f, 0.000001f, @"Weight max should be 1.");
+  LXMemory *mostCommonlyUsed = [fetchedObject objectAtIndex:0];
+  XCTAssertTrue([mostCommonlyUsed.reading isEqual:@"shì"], @"Should be shì");
+
+  XCTAssertEqualWithAccuracy([mostCommonlyUsed.weight doubleValue], 1.0f, 0.000001f, @"Weight max should be 1.");
   
 }
 
