@@ -53,7 +53,7 @@
 
 }
 
-+ (NSTimeInterval)progressForPinyin:(NSString *)reading {
++ (NSTimeInterval)timeNeededForPinyin:(NSString *)reading {
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
   NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":reading}];
@@ -70,10 +70,10 @@
   return 0.0f; // not found.
 }
 
-+ (void)setProgressForPinyin:(NSString *)pinying WithTimeInterval:(NSTimeInterval)timeInterval {
++ (void)setTimeNeeded:(NSTimeInterval)timeNeeded forPinyin:(NSString *)pinyin {
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
-  NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":pinying}];
+  NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":pinyin}];
   
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
   
@@ -83,7 +83,7 @@
   if ([fetchedObjects count]==0)
     return; // Forget to init memory?
   LXMemory *memory = [fetchedObjects objectAtIndex:0];
-  memory.timeNeeded = (memory.timeNeeded + timeInterval)/2.0f;
+  memory.timeNeeded = (memory.timeNeeded + timeNeeded)/2.0f;
   
   NSError *error;
   [context save:&error];
@@ -92,5 +92,14 @@
   }
   
 }
+
+- (int16_t)frequencyGroup {
+  [self willAccessValueForKey:@"frequencyGroup"];
+  int16_t frequencyGroup = 4 - INT16_C(ceil( self.weight / 0.25f));
+  [self didAccessValueForKey: @"frequencyGroup"];
+  return frequencyGroup;
+}
+
+
 
 @end

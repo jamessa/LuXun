@@ -13,7 +13,7 @@
 + (void) reset; // clear memory
 + (void) fillWithMemories: (NSArray *)memories;
 + (void) sharedMemory;
-+ (NSTimeInterval) progressForPinyin: (NSString *)reading;
-+ (void) setProgressForPinyin: (NSString *)pinying WithTimeInterval: (NSTimeInterval) timeInterval;
++ (NSTimeInterval) timeNeededForPinyin: (NSString *)reading;
++ (void) setTimeNeeded: (NSTimeInterval) timeNeeded forPinyin: (NSString*)pinyin;
 
 @end

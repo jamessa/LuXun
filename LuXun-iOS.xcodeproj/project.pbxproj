@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B5F7959180B1436008FEFDC /* LXCoach.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F7958180B1436008FEFDC /* LXCoach.m */; };
-		4B6C3B4318277C2F008FC964 /* LXMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C3B4218277C2F008FC964 /* LXMemory.m */; };
+		4B6C3B4618279E51008FC964 /* LXMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C3B4518279E51008FC964 /* LXMemory.m */; };
 		4B85DB39180FDBED00C2849D /* LXCoachAndStrategyTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */; };
 		4B884F79180A7176000E5E1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F78180A7176000E5E1E /* Foundation.framework */; };
 		4B884F7B180A7176000E5E1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F7A180A7176000E5E1E /* CoreGraphics.framework */; };
@@ -61,8 +61,8 @@
 		4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dict-revised.sqlite3"; sourceTree = "<group>"; };
 		4B5F7957180B1436008FEFDC /* LXCoach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCoach.h; sourceTree = "<group>"; };
 		4B5F7958180B1436008FEFDC /* LXCoach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoach.m; sourceTree = "<group>"; };
-		4B6C3B4118277C2F008FC964 /* LXMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMemory.h; sourceTree = "<group>"; };
-		4B6C3B4218277C2F008FC964 /* LXMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMemory.m; sourceTree = "<group>"; };
+		4B6C3B4418279E51008FC964 /* LXMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXMemory.h; sourceTree = "<group>"; };
+		4B6C3B4518279E51008FC964 /* LXMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMemory.m; sourceTree = "<group>"; };
 		4B78174E180A93D1001A45B8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoachAndStrategyTestCase.m; sourceTree = "<group>"; };
 		4B884F75180A7176000E5E1E /* LuXun-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuXun-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,8 +247,8 @@
 				4BE3D3FF1818FCB00064CC31 /* LXHistory.m */,
 				4BA1D6D41820BE500087B9D3 /* LXMemory+Addons.h */,
 				4BA1D6D51820BE500087B9D3 /* LXMemory+Addons.m */,
-				4B6C3B4118277C2F008FC964 /* LXMemory.h */,
-				4B6C3B4218277C2F008FC964 /* LXMemory.m */,
+				4B6C3B4418279E51008FC964 /* LXMemory.h */,
+				4B6C3B4518279E51008FC964 /* LXMemory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 				4BA1D6D61820BE500087B9D3 /* LXMemory+Addons.m in Sources */,
 				4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */,
 				4B884F97180A7176000E5E1E /* LXFlipsideViewController.m in Sources */,
-				4B6C3B4318277C2F008FC964 /* LXMemory.m in Sources */,
+				4B6C3B4618279E51008FC964 /* LXMemory.m in Sources */,
 				4B884F91180A7176000E5E1E /* LuXun_iOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

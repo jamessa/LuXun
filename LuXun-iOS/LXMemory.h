@@ -12,8 +12,9 @@
 
 @interface LXMemory : NSManagedObject
 
-@property (nonatomic) double timeNeeded;
 @property (nonatomic, retain) NSString * reading;
+@property (nonatomic) double timeNeeded;
 @property (nonatomic) double weight;
+@property (nonatomic) int16_t frequencyGroup;
 
 @end

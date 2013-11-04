@@ -107,12 +107,28 @@
   [coach reset];
   NSString *testSubject = @"shì";
   
-  XCTAssertEqualWithAccuracy([LXMemory progressForPinyin:testSubject], 128.0f, 0.1f, @"init with a huge number");
+  XCTAssertEqualWithAccuracy([LXMemory timeNeededForPinyin:testSubject], 128.0f, 0.1f, @"init with a huge number");
   
-  [LXMemory setProgressForPinyin:testSubject WithTimeInterval:0.01f];
+  [LXMemory setTimeNeeded:0.01f forPinyin:testSubject];
   
-  XCTAssertEqualWithAccuracy([LXMemory progressForPinyin:testSubject], 64.0f, 0.1f, @"Should be 1/2 of init value.");
+  XCTAssertEqualWithAccuracy([LXMemory timeNeededForPinyin:testSubject], 64.0f, 0.1f, @"Should be 1/2 of init value.");
   
+}
+
+-(void)testTransientMemorySections {
+  [coach reset];
+  NSString *testSubject = @"shì";
+  NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
+  NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":testSubject}];
+  
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  
+  fetchAMemory.sortDescriptors = @[sortDescriptor];
+  
+  NSArray *fetchedObjects = [context executeFetchRequest:fetchAMemory error:nil];
+  LXMemory *memory = fetchedObjects[0];
+  
+  XCTAssertEqual(memory.frequencyGroup, (int16_t)0, @"shi is top frequecy group");
 }
 
 @end

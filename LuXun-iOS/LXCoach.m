@@ -74,6 +74,6 @@
 
 - (void)trackTimeInterval:(NSTimeInterval)timeInterval forPinyin:(NSString *)reading usingContext:(NSManagedObjectContext *)context {
   [LXHistory trackTimeInterval:timeInterval forReading:reading withContext:context];
-  [LXMemory setProgressForPinyin:reading WithTimeInterval:timeInterval];
+  [LXMemory setTimeNeeded:timeInterval forPinyin:reading];
 }
 @end

@@ -59,6 +59,10 @@
   return [[self.fetchedResultsController sections]count];
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+  return @[@"常用音",@"次常用音",@"次次常用音",@"罕常用音"];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
@@ -142,7 +146,7 @@
   NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"timeNeeded" ascending:YES];
   [fetchRequest setSortDescriptors:@[sortDescriptor]];
   
-  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"frequencyGroup" cacheName:nil];
   
   _fetchedResultsController.delegate = self;
   return _fetchedResultsController;
