@@ -7,7 +7,7 @@
 //
 
 #import "LXStatisticViewController.h"
-#import "LXHistory.h"
+#import "LXMemory.h"
 
 @interface LXStatisticViewController ()
 
@@ -71,9 +71,9 @@
   
   // Configure the cell...
 
-  LXHistory *aHistroy = (LXHistory*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-  cell.textLabel.text = aHistroy.reading;
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", aHistroy.responseTime];
+  LXMemory *aMemory = (LXMemory*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+  cell.textLabel.text = aMemory.reading;
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", aMemory.timeNeeded];
   
   return cell;
 }
@@ -137,12 +137,12 @@
   }
   
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:@"History" inManagedObjectContext:self.managedObjectContext];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"Memory" inManagedObjectContext:self.managedObjectContext];
   [fetchRequest setEntity:entity];
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"timestamp" ascending:NO];
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"timeNeeded" ascending:YES];
   [fetchRequest setSortDescriptors:@[sortDescriptor]];
   
-  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"reading" cacheName:nil];
+  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
   
   _fetchedResultsController.delegate = self;
   return _fetchedResultsController;

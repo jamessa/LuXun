@@ -42,8 +42,55 @@
     LXMemory *memory = [NSEntityDescription insertNewObjectForEntityForName:@"Memory" inManagedObjectContext:context];
     memory.reading = item[@"pinyin"];
     accumulate += [item[@"count"] doubleValue];
-    memory.weight = @((double)accumulate/total);
+    memory.weight = (double)accumulate/total;
     [context save:nil];
   }
 }
+
++ (void)sharedMemory {
+  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  
+
+}
+
++ (NSTimeInterval)progressForPinyin:(NSString *)reading {
+  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
+  NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":reading}];
+  
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  
+  fetchAMemory.sortDescriptors = @[sortDescriptor];
+  
+  NSArray *fetchedObjects = [context executeFetchRequest:fetchAMemory error:nil];
+  
+  if ([fetchedObjects count]==1) {
+    return ((LXMemory*)[fetchedObjects objectAtIndex:0]).timeNeeded;
+  }
+  return 0.0f; // not found.
+}
+
++ (void)setProgressForPinyin:(NSString *)pinying WithTimeInterval:(NSTimeInterval)timeInterval {
+  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
+  NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":pinying}];
+  
+  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  
+  fetchAMemory.sortDescriptors = @[sortDescriptor];
+  
+  NSArray *fetchedObjects = [context executeFetchRequest:fetchAMemory error:nil];
+  if ([fetchedObjects count]==0)
+    return; // Forget to init memory?
+  LXMemory *memory = [fetchedObjects objectAtIndex:0];
+  memory.timeNeeded = (memory.timeNeeded + timeInterval)/2.0f;
+  
+  NSError *error;
+  [context save:&error];
+  if (error) {
+    NSLog(@"Memory save error: %ld, %@", (long)error.code, error.localizedDescription);
+  }
+  
+}
+
 @end

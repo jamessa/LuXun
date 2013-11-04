@@ -48,5 +48,8 @@
 
 @interface LXRandomStragegy : NSObject <LXStrategy>
 
+@end
+
+@interface LXThreePhaseStrategy : NSObject <LXStrategy>
 
 @end

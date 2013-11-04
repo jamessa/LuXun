@@ -35,6 +35,13 @@
 
 @end
 
+@implementation LXThreePhaseStrategy {
+  
+}
+
+
+@end
+
 @implementation LXCoach {
   NSMutableArray *memory;
 }
@@ -67,5 +74,6 @@
 
 - (void)trackTimeInterval:(NSTimeInterval)timeInterval forPinyin:(NSString *)reading usingContext:(NSManagedObjectContext *)context {
   [LXHistory trackTimeInterval:timeInterval forReading:reading withContext:context];
+  [LXMemory setProgressForPinyin:reading WithTimeInterval:timeInterval];
 }
 @end

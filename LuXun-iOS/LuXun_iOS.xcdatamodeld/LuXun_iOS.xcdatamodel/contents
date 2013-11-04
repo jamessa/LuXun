@@ -6,11 +6,12 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="Memory" representedClassName="LXMemory" syncable="YES">
-        <attribute name="progress" optional="YES" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.0" syncable="YES"/>
         <attribute name="reading" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="weight" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timeNeeded" optional="YES" attributeType="Double" minValueString="0" defaultValueString="128" syncable="YES"/>
+        <attribute name="weight" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <fetchRequest name="allMemories" entity="Memory"/>
+    <fetchRequest name="aMemory" entity="Memory" predicateString="reading == $READING"/>
     <fetchRequest name="responseTimeForPinyin" entity="History" predicateString="reading == $READING"/>
     <elements>
         <element name="History" positionX="0" positionY="0" width="0" height="0"/>

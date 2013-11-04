@@ -2,7 +2,7 @@
 //  LXMemory.h
 //  LuXun-iOS
 //
-//  Created by jamie on 10/30/13.
+//  Created by jamie on 11/4/13.
 //  Copyright (c) 2013 2think. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 
 @interface LXMemory : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * progress;
+@property (nonatomic) double timeNeeded;
 @property (nonatomic, retain) NSString * reading;
-@property (nonatomic, retain) NSNumber * weight;
+@property (nonatomic) double weight;
 
 @end

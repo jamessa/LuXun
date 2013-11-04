@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "LXCoach.h"
 #import "LXAppDelegate.h"
-#import "LXMemory.h"
+#import "LXMemory+Addons.h"
 #import "LXDict.h"
 
 @interface LXGoodStrategy : NSObject <LXStrategy>
@@ -99,7 +99,19 @@
   LXMemory *mostCommonlyUsed = [fetchedObject objectAtIndex:0];
   XCTAssertTrue([mostCommonlyUsed.reading isEqual:@"shì"], @"Should be shì");
 
-  XCTAssertEqualWithAccuracy([mostCommonlyUsed.weight doubleValue], 1.0f, 0.000001f, @"Weight max should be 1.");
+  XCTAssertEqualWithAccuracy(mostCommonlyUsed.weight, 1.0f, 0.000001f, @"Weight max should be 1.");
+  
+}
+
+-(void)testLoadAMemoryAndUpdate {
+  [coach reset];
+  NSString *testSubject = @"shì";
+  
+  XCTAssertEqualWithAccuracy([LXMemory progressForPinyin:testSubject], 128.0f, 0.1f, @"init with a huge number");
+  
+  [LXMemory setProgressForPinyin:testSubject WithTimeInterval:0.01f];
+  
+  XCTAssertEqualWithAccuracy([LXMemory progressForPinyin:testSubject], 64.0f, 0.1f, @"Should be 1/2 of init value.");
   
 }
 
