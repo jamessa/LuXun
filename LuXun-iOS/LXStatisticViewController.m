@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
+- (IBAction)doneHandler:(id)sender;
+
 @end
 
 @implementation LXStatisticViewController
@@ -55,12 +57,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  
   return [[self.fetchedResultsController sections]count];
 }
 
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-  return @[@"常用音",@"次常用音",@"次次常用音",@"罕常用音"];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  NSArray *titles = @[@"常用音",@"次常用音",@"次次常用音",@"罕常用音"];
+
+  NSUInteger numberOfObjects = [[[self.fetchedResultsController sections] objectAtIndex:section ] numberOfObjects];
+  
+  return [NSString stringWithFormat:@"%@ (%ld)", titles[section], numberOfObjects];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -73,11 +78,10 @@
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  // Configure the cell...
-
+  
   LXMemory *aMemory = (LXMemory*)[self.fetchedResultsController objectAtIndexPath:indexPath];
   cell.textLabel.text = aMemory.reading;
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", aMemory.timeNeeded];
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld, %f, %f", indexPath.section, aMemory.weight, aMemory.timeNeeded];
   
   return cell;
 }
@@ -143,13 +147,18 @@
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
   NSEntityDescription *entity = [NSEntityDescription entityForName:@"Memory" inManagedObjectContext:self.managedObjectContext];
   [fetchRequest setEntity:entity];
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"timeNeeded" ascending:YES];
-  [fetchRequest setSortDescriptors:@[sortDescriptor]];
+  NSSortDescriptor *byFrequency = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  NSSortDescriptor *byTimeNeeded = [[NSSortDescriptor alloc] initWithKey:@"timeNeeded" ascending:YES];
+  [fetchRequest setSortDescriptors:@[byFrequency, byTimeNeeded]];
   
   _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"frequencyGroup" cacheName:nil];
   
   _fetchedResultsController.delegate = self;
   return _fetchedResultsController;
+}
+
+- (IBAction)doneHandler:(id)sender {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

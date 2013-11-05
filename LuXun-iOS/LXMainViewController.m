@@ -72,7 +72,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   if ([[segue identifier] isEqualToString:@"showStatistic"]) {
-    [(LXStatisticViewController *)[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+    LXStatisticViewController *viewController = (LXStatisticViewController*)[((UINavigationController*)[segue destinationViewController]) topViewController];
+    [viewController setManagedObjectContext:self.managedObjectContext];
   }
 }
 
