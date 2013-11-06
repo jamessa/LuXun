@@ -99,8 +99,6 @@
   LXMemory *mostCommonlyUsed = [fetchedObject objectAtIndex:0];
   XCTAssertTrue([mostCommonlyUsed.reading isEqual:@"shì"], @"Should be shì");
   
-  NSLog(@"%@", mostCommonlyUsed);
-
   XCTAssertEqualWithAccuracy(mostCommonlyUsed.weight, 1.0f, 0.000001f, @"Weight max should be 1.");
   
 }
@@ -133,5 +131,19 @@
   XCTAssertEqual(memory.section, (int16_t)0, @"shi is top frequecy group");
 }
 
+-(void)testWeightedStrategy {
+  [coach reset];
+  [coach setStrategy:[[LXThreePhaseStrategy alloc]init]];
+  
+  NSString *pinyin = [coach nextMove][@"pinyin"];
+  NSRange range = [pinyin rangeOfString:@"shì"];
+  XCTAssertNotEqual(range.length, (NSUInteger)0, @"Should contain 'shì'.");
+  [LXMemory setTimeNeeded:0.01f forPinyin:@"shì"];
+  
+  pinyin = [coach nextMove][@"pinyin"];
+  range = [pinyin rangeOfString:@"bù"];
+  NSLog(@"%@", pinyin);
+  XCTAssertNotEqual(range.length, (NSUInteger)0, @"Should contain 'bù'.");
+}
 
 @end

@@ -149,7 +149,8 @@
   [fetchRequest setEntity:entity];
   NSSortDescriptor *byFrequency = [[NSSortDescriptor alloc] initWithKey:@"section" ascending:YES];
   NSSortDescriptor *byTimeNeeded = [[NSSortDescriptor alloc] initWithKey:@"timeNeeded" ascending:YES];
-  [fetchRequest setSortDescriptors:@[byFrequency, byTimeNeeded]];
+  NSSortDescriptor *byWeight = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  [fetchRequest setSortDescriptors:@[byFrequency, byTimeNeeded, byWeight]];
   
   _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"section" cacheName:nil];
   

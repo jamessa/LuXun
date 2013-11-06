@@ -13,6 +13,7 @@
     </entity>
     <fetchRequest name="allMemories" entity="Memory"/>
     <fetchRequest name="aMemory" entity="Memory" predicateString="reading == $READING"/>
+    <fetchRequest name="leastPracticedPinyinInSection" entity="Memory" predicateString="section == $SECTION"/>
     <fetchRequest name="responseTimeForPinyin" entity="History" predicateString="reading == $READING"/>
     <elements>
         <element name="History" positionX="0" positionY="0" width="0" height="0"/>

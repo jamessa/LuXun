@@ -46,9 +46,9 @@
   return returningArray;
 }
 
-- (NSArray *)charactersForPinyin:(NSString *)prefix {
+- (NSArray *)charactersForPinyin:(NSString *)pinyin {
   
-  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where heteronyms.pinyin like '%@' order by length(title) limit 10", prefix];
+  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where heteronyms.pinyin like '%@' or heteronyms.pinyin like '%@ %%' or heteronyms.pinyin like '%% %@' or heteronyms.pinyin like '%% %@ %%' order by length(title)", pinyin, pinyin, pinyin, pinyin];
   return [self executeQuery:queryString];
 
 }

@@ -93,4 +93,23 @@
   }
   
 }
+
++ (NSString *)leastPracticedPinyinInSection:(NSUInteger)section {
+  
+  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  NSManagedObjectModel *model = [[context persistentStoreCoordinator]managedObjectModel];
+  NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"leastPracticedPinyinInSection" substitutionVariables:@{@"SECTION":@0}];
+  NSSortDescriptor *byTimeNeeded = [NSSortDescriptor sortDescriptorWithKey:@"timeNeeded" ascending:NO];
+  NSSortDescriptor *byWeighting = [NSSortDescriptor sortDescriptorWithKey:@"weight" ascending:NO];
+  fetchRequest.fetchLimit = 1;
+  fetchRequest.sortDescriptors = @[byTimeNeeded, byWeighting];
+  
+  NSError *fetchError;
+  NSArray *fetchedObjcets = [context executeFetchRequest:fetchRequest error:&fetchError];
+  if ([fetchedObjcets count]) {
+    return ((LXMemory*)[fetchedObjcets firstObject]).reading;
+  }
+  
+  return nil;
+}
 @end

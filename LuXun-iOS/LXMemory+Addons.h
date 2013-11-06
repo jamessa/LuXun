@@ -15,5 +15,6 @@
 + (void) sharedMemory;
 + (NSTimeInterval) timeNeededForPinyin: (NSString *)reading;
 + (void) setTimeNeeded: (NSTimeInterval) timeNeeded forPinyin: (NSString*)pinyin;
++ (NSString*) leastPracticedPinyinInSection:(NSUInteger)section;
 
 @end

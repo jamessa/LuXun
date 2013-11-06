@@ -36,7 +36,23 @@
 @end
 
 @implementation LXThreePhaseStrategy {
+  LXDict *dictionary;
+}
+
+- (id)init {
+  self = [super init];
+  if (!self)
+    return nil;
   
+  dictionary = [[LXDict alloc] init];
+  return self;
+}
+
+
+- (NSDictionary *)nextMove:(NSArray *)memory{
+  NSString *pinyin = [LXMemory leastPracticedPinyinInSection:0];
+  NSArray *candidates = [dictionary charactersForPinyin:[NSString stringWithFormat:@"%@",pinyin]];
+  return [candidates objectAtIndex:(rand()%[candidates count])];
 }
 
 

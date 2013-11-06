@@ -49,6 +49,7 @@
  if (!coach) {
     coach = [[LXCoach alloc] init];
   }
+  coach.strategy = [[LXThreePhaseStrategy alloc] init];
   
   self.pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval) {
     [coach trackTimeInterval: timeInterval forPinyin: reading usingContext:self.managedObjectContext];
