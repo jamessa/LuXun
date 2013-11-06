@@ -93,14 +93,4 @@
   }
   
 }
-
-- (int16_t)frequencyGroup {
-  [self willAccessValueForKey:@"frequencyGroup"];
-  int16_t frequencyGroup = 4 - INT16_C(ceil( self.weight / 0.25f));
-  [self didAccessValueForKey: @"frequencyGroup"];
-  return frequencyGroup;
-}
-
-
-
 @end

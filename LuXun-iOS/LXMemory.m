@@ -11,10 +11,9 @@
 
 @implementation LXMemory
 
-@dynamic frequencyGroup;
 @dynamic reading;
+@dynamic section;
 @dynamic timeNeeded;
 @dynamic weight;
-@dynamic section;
 
 @end

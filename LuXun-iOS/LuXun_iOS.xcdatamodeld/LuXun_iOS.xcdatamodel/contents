@@ -6,7 +6,6 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="Memory" representedClassName="LXMemory" syncable="YES">
-        <attribute name="frequencyGroup" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="reading" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="section" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timeNeeded" optional="YES" attributeType="Double" minValueString="0" defaultValueString="128" syncable="YES"/>

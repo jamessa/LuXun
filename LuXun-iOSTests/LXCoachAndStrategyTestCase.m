@@ -130,7 +130,7 @@
   NSArray *fetchedObjects = [context executeFetchRequest:fetchAMemory error:nil];
   LXMemory *memory = fetchedObjects[0];
   
-  XCTAssertEqual(memory.frequencyGroup, (int16_t)0, @"shi is top frequecy group");
+  XCTAssertEqual(memory.section, (int16_t)0, @"shi is top frequecy group");
 }
 
 
