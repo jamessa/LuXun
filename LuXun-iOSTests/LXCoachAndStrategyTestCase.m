@@ -98,6 +98,8 @@
   XCTAssertTrue([[fetchedObject valueForKeyPath:@"@count.reading"] integerValue] == (NSUInteger)1421, @"Should be 1421.");
   LXMemory *mostCommonlyUsed = [fetchedObject objectAtIndex:0];
   XCTAssertTrue([mostCommonlyUsed.reading isEqual:@"shì"], @"Should be shì");
+  
+  NSLog(@"%@", mostCommonlyUsed);
 
   XCTAssertEqualWithAccuracy(mostCommonlyUsed.weight, 1.0f, 0.000001f, @"Weight max should be 1.");
   
@@ -130,5 +132,6 @@
   
   XCTAssertEqual(memory.frequencyGroup, (int16_t)0, @"shi is top frequecy group");
 }
+
 
 @end

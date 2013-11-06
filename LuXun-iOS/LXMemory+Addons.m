@@ -43,6 +43,7 @@
     memory.reading = item[@"pinyin"];
     accumulate += [item[@"count"] doubleValue];
     memory.weight = (double)accumulate/total;
+    memory.section = 4 - INT16_C(ceil( memory.weight / 0.25f));
     [context save:nil];
   }
 }

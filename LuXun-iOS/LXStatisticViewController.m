@@ -147,11 +147,11 @@
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
   NSEntityDescription *entity = [NSEntityDescription entityForName:@"Memory" inManagedObjectContext:self.managedObjectContext];
   [fetchRequest setEntity:entity];
-  NSSortDescriptor *byFrequency = [[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO];
+  NSSortDescriptor *byFrequency = [[NSSortDescriptor alloc] initWithKey:@"section" ascending:YES];
   NSSortDescriptor *byTimeNeeded = [[NSSortDescriptor alloc] initWithKey:@"timeNeeded" ascending:YES];
   [fetchRequest setSortDescriptors:@[byFrequency, byTimeNeeded]];
   
-  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"frequencyGroup" cacheName:nil];
+  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"section" cacheName:nil];
   
   _fetchedResultsController.delegate = self;
   return _fetchedResultsController;
