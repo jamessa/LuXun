@@ -47,8 +47,12 @@
 }
 
 - (NSArray *)charactersForPinyin:(NSString *)pinyin {
+  if (!pinyin) {
+    return @[@{@"title":@"空",
+               @"pinyin":@"kōng"}];
+  }
   
-  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where heteronyms.pinyin like '%@' or heteronyms.pinyin like '%@ %%' or heteronyms.pinyin like '%% %@' or heteronyms.pinyin like '%% %@ %%' order by length(title)", pinyin, pinyin, pinyin, pinyin];
+  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms2.pinyin from heteronyms2 inner join entries on entries.id = heteronyms2.entry_id where heteronyms2.pinyin match '%@' order by length(title);", pinyin];
   return [self executeQuery:queryString];
 
 }

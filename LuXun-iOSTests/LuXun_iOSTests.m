@@ -33,17 +33,15 @@
   
   LXDict *dict = [[LXDict alloc] init];
   
-  NSArray *gao = [dict charactersForPinyin:@"gǎo %"];
-  XCTAssertTrue([gao[0][@"title"] isEqualToString:@"搞丟"], @"should be 搞丟");
-  NSArray *hao = [dict charactersForPinyin:@"hǎo %"];
-  XCTAssertTrue([hao[0][@"title"] isEqualToString:@"好不"], @"should be 好不");
+  NSArray *gao = [dict charactersForPinyin:@"gǎo"];
+  XCTAssertEqualObjects(gao[0][@"title"], @"搞", @"Should be 搞");
+  NSArray *hao = [dict charactersForPinyin:@"hǎo"];
+  XCTAssertEqualObjects(hao[0][@"title"],@"好", @"should be 好");
  
   NSArray *pinyinForHao = [dict pinyinReadingForCharacters:@"好"];
-  XCTAssertTrue([pinyinForHao[0][@"pinyin"] isEqualToString:@"hào"], @"Should be hào");
-  XCTAssertTrue([pinyinForHao[1][@"pinyin"] isEqualToString:@"hǎo"], @"Should be hǎo");
+  XCTAssertEqualObjects(pinyinForHao[0][@"pinyin"], @"hào", @"Should be hào");
+  XCTAssertEqualObjects(pinyinForHao[1][@"pinyin"], @"hǎo", @"Should be hǎo");
 }
-
-
 
 - (void)testCoach {
   LXCoach *coach = [[LXCoach alloc] init];

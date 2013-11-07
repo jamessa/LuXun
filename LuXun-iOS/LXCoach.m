@@ -51,7 +51,7 @@
 
 - (NSDictionary *)nextMove:(NSArray *)memory{
   NSString *pinyin = [LXMemory leastPracticedPinyinInSection:0];
-  NSArray *candidates = [dictionary charactersForPinyin:[NSString stringWithFormat:@"%@",pinyin]];
+  NSArray *candidates = [dictionary charactersForPinyin:pinyin];
   return [candidates objectAtIndex:(rand()%[candidates count])];
 }
 
