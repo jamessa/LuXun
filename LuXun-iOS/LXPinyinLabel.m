@@ -64,10 +64,12 @@
       NSTimeInterval endTime = [lapTimes[pinyinRange.location+pinyinRange.length] doubleValue];
       self.characterTimes[pinyin] = @(fabs(endTime-beginTime));
       if (_matchedBlock) {
-        _matchedBlock(pinyin,fabs(endTime-beginTime));
+        _matchedBlock(pinyin, fabs(endTime-beginTime),NO);
       }
     }
-    
+    if(_matchedBlock) {
+      _matchedBlock(nil,0, YES);
+    }
   }
   /* track time here 
    // Pinyin finished, log pinyin reading time.

@@ -46,13 +46,19 @@
 {
   [super viewDidLoad];
   
- if (!coach) {
+  if (!coach) {
     coach = [[LXCoach alloc] init];
   }
   coach.strategy = [[LXThreePhaseStrategy alloc] init];
   
-  self.pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval) {
-    [coach trackTimeInterval: timeInterval forPinyin: reading usingContext:self.managedObjectContext];
+  self.pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval, BOOL isCompleted) {
+    if (isCompleted)
+      // This fixes a mystery textView or label crash possbile due to inconstisent internal states. Because this block is triggered inside of the state.
+      [self performSelector:@selector(nextTrial) withObject:self afterDelay:1];
+    else
+      [coach trackTimeInterval: timeInterval
+                     forPinyin: reading
+                  usingContext:self.managedObjectContext];
   };
   
 }
@@ -85,12 +91,13 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
   
+  self.pinyinLabel.text2 = textView.text;
+  
   if ([self.helperLabel.text isEqualToString:textView.text]) {
     // some bingo animation here.
     [self nextTrial];
   }
   
-  self.pinyinLabel.text2 = textView.text;
   
 }
 @end

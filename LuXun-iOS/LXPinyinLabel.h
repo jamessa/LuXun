@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^matchingBlockType)(NSString* reading, NSTimeInterval timeInterval);
+typedef void (^matchingBlockType)(NSString* reading, NSTimeInterval timeInterval, BOOL isCompleted);
 
 @interface LXPinyinLabel : UILabel
 

@@ -36,9 +36,10 @@
 - (void)testMatchedBlock {
   
   __block typeof (readings) breadings = readings;
-    pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval) {
-    NSLog(@"In block %@, %f", reading, timeInterval);
-    [breadings setValue:@(timeInterval) forKey:reading];
+    pinyinLabel.matchedBlock = ^(NSString *reading, NSTimeInterval timeInterval, BOOL isCompleted) {
+      if (!isCompleted) {
+        [breadings setValue:@(timeInterval) forKey:reading];
+      }
   };
   
   pinyinLabel.text = @"háo qì";
