@@ -146,4 +146,14 @@
   XCTAssertNotEqual(range.length, (NSUInteger)0, @"Should contain 'bù'.");
 }
 
+- (void)testRandomCharacterForPinyin {
+  LXDict *dict = [[LXDict alloc] init];
+  NSDictionary *characters = [dict randomCharactersForPinyin:@"shì"];
+  NSLog(@"%@", characters);
+  NSString *pinyin = characters[@"pinyin"];
+  NSRange range = [pinyin rangeOfString:@"shì"];
+  XCTAssertNotEqual(range.length, (NSUInteger)0, @"Should contain `shi`.");
+  
+}
+
 @end

@@ -22,13 +22,7 @@
   // Override point for customization after application launch.
   LXMainViewController *controller = (LXMainViewController *)self.window.rootViewController;
   controller.managedObjectContext = self.managedObjectContext;
-  
-  LXHistory *history = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:self.managedObjectContext];
-  history.timestamp = [NSDate date];
-  history.reading = @"hào";
-  history.responseTime = @(rand()%1000/10.0);
-  [self.managedObjectContext save:nil];
-  
+
   return YES;
 }
 

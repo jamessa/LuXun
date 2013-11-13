@@ -57,6 +57,21 @@
 
 }
 
+- (NSDictionary *)randomCharactersForPinyin:(NSString *)pinyin {
+  if (!pinyin) {
+    return @{@"title":@"空",
+               @"pinyin":@"kōng"};
+  }
+   NSString *countQueryString = [NSString stringWithFormat:@"select count(*) from heteronyms2 inner join entries on entries.id = heteronyms2.entry_id where heteronyms2.pinyin match '%@';", pinyin];
+  
+  NSDictionary *firstRow = (NSDictionary*)[[self executeQuery:countQueryString] firstObject];
+  
+  NSUInteger randomOffset = rand()%[firstRow[@"count(*)"] unsignedIntegerValue];
+  
+  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms2.pinyin from heteronyms2 inner join entries on entries.id = heteronyms2.entry_id where heteronyms2.pinyin match '%@' limit 1 offset %lu ;", pinyin, (unsigned long)randomOffset];
+  return [[self executeQuery:queryString] firstObject];
+}
+
 - (NSArray *)pinyinReadingForCharacters:(NSString *)characters {
   NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms.pinyin from heteronyms inner join entries on entries.id = heteronyms.entry_id where title like '%@' order by pinyin limit 5",characters];
   

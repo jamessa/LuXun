@@ -13,6 +13,8 @@
 
 - (NSArray *) charactersForPinyin:(NSString *)prefix;
 
+- (NSDictionary *)randomCharactersForPinyin:(NSString *)pinyin;
+
 - (NSArray *) pinyinReadingForCharacters:(NSString *)characters;
 
 - (NSArray *) random;
