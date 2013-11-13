@@ -111,7 +111,7 @@
   
   [LXMemory setTimeNeeded:0.01f forPinyin:testSubject];
   
-  XCTAssertEqualWithAccuracy([LXMemory timeNeededForPinyin:testSubject], 64.0f, 0.1f, @"Should be 1/2 of init value.");
+  XCTAssertEqualWithAccuracy([LXMemory timeNeededForPinyin:testSubject], 128.0*0.2f, 0.1f, @"Should be 1/2 of init value.");
   
 }
 

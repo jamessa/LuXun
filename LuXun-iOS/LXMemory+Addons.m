@@ -71,6 +71,7 @@
   return 0.0f; // not found.
 }
 
+#define LEARNING_WEIGHT 0.8f
 + (void)setTimeNeeded:(NSTimeInterval)timeNeeded forPinyin:(NSString *)pinyin {
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
@@ -84,7 +85,7 @@
   if ([fetchedObjects count]==0)
     return; // Forget to init memory?
   LXMemory *memory = [fetchedObjects objectAtIndex:0];
-  memory.timeNeeded = (memory.timeNeeded + timeNeeded)/2.0f;
+  memory.timeNeeded = timeNeeded * LEARNING_WEIGHT + memory.timeNeeded * (1-LEARNING_WEIGHT);
   
   NSError *error;
   [context save:&error];
