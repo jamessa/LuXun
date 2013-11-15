@@ -65,7 +65,7 @@
 
   NSUInteger numberOfObjects = [[[self.fetchedResultsController sections] objectAtIndex:section ] numberOfObjects];
   
-  return [NSString stringWithFormat:@"%@ (%ld)", titles[section], numberOfObjects];
+  return [NSString stringWithFormat:@"%@ (%ld)", titles[section], (unsigned long)numberOfObjects];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -81,7 +81,7 @@
   
   LXMemory *aMemory = (LXMemory*)[self.fetchedResultsController objectAtIndexPath:indexPath];
   cell.textLabel.text = aMemory.reading;
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld, %f, %f", indexPath.section, aMemory.weight, aMemory.timeNeeded];
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%3.2fs", aMemory.timeNeeded];
   
   return cell;
 }

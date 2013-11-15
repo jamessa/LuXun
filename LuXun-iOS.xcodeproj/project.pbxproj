@@ -237,8 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				4B884F8F180A7176000E5E1E /* LuXun_iOS.xcdatamodeld */,
-				4BB1A0881829FE260098248A /* LXMemory.h */,
-				4BB1A0891829FE260098248A /* LXMemory.m */,
 				4B5F7957180B1436008FEFDC /* LXCoach.h */,
 				4B5F7958180B1436008FEFDC /* LXCoach.m */,
 				4BBA6992180A9AFE003754E1 /* LXDict.h */,
@@ -249,6 +247,8 @@
 				4BE3D3FF1818FCB00064CC31 /* LXHistory.m */,
 				4BA1D6D41820BE500087B9D3 /* LXMemory+Addons.h */,
 				4BA1D6D51820BE500087B9D3 /* LXMemory+Addons.m */,
+				4BB1A0881829FE260098248A /* LXMemory.h */,
+				4BB1A0891829FE260098248A /* LXMemory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
