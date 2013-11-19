@@ -38,8 +38,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [self.inputTextView becomeFirstResponder];
   [self nextTrial];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self.inputTextView becomeFirstResponder];
 }
 
 - (void)viewDidLoad
