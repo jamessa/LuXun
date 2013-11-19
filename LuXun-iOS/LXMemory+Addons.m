@@ -32,7 +32,7 @@
 
 + (void)fillWithMemories:(NSArray *)memories {
   /* Accumulated count is used here to easily find out reading weight
-    
+   
    */
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   
@@ -51,7 +51,7 @@
 + (void)sharedMemory {
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   
-
+  
 }
 
 + (NSTimeInterval)timeNeededForPinyin:(NSString *)reading {
@@ -71,7 +71,6 @@
   return 0.0f; // not found.
 }
 
-#define LEARNING_WEIGHT 0.8f
 + (void)setTimeNeeded:(NSTimeInterval)timeNeeded forPinyin:(NSString *)pinyin {
   NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
@@ -85,7 +84,12 @@
   if ([fetchedObjects count]==0)
     return; // Forget to init memory?
   LXMemory *memory = [fetchedObjects objectAtIndex:0];
-  memory.timeNeeded = timeNeeded * LEARNING_WEIGHT + memory.timeNeeded * (1-LEARNING_WEIGHT);
+  
+  if (memory.timeNeeded >= 60.f) {
+    memory.timeNeeded = timeNeeded;
+  } else {
+    memory.timeNeeded = (timeNeeded + memory.timeNeeded) / 2.0;
+  }
   
   NSError *error;
   [context save:&error];

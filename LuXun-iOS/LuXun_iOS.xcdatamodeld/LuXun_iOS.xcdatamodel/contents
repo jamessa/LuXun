@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="History" representedClassName="LXHistory" syncable="YES">
         <attribute name="reading" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="responseTime" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -8,7 +8,7 @@
     <entity name="Memory" representedClassName="LXMemory" syncable="YES">
         <attribute name="reading" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="section" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="timeNeeded" optional="YES" attributeType="Double" minValueString="0" defaultValueString="128" syncable="YES"/>
+        <attribute name="timeNeeded" optional="YES" attributeType="Double" minValueString="0" defaultValueString="60" syncable="YES"/>
         <attribute name="weight" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <fetchRequest name="allMemories" entity="Memory"/>

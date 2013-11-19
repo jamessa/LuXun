@@ -81,7 +81,7 @@
   
   LXMemory *aMemory = (LXMemory*)[self.fetchedResultsController objectAtIndexPath:indexPath];
   cell.textLabel.text = aMemory.reading;
-  cell.detailTextLabel.text = [NSString stringWithFormat:@"%3.2fs", aMemory.timeNeeded];
+  cell.detailTextLabel.text = (aMemory.timeNeeded>60.0f)?@"-":[NSString stringWithFormat:@"%3.2fs", aMemory.timeNeeded];
   
   return cell;
 }

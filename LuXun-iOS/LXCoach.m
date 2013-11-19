@@ -50,7 +50,7 @@
 
 
 - (NSDictionary *)nextMove:(NSArray *)memory{
-  NSString *pinyin = [LXMemory leastPracticedPinyinInSection:0];
+  NSString *pinyin = [LXMemory leastPracticedPinyinInSection:1];
   return [dictionary randomCharactersForPinyin:pinyin];
 }
 
