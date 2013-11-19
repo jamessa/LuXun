@@ -250,6 +250,7 @@
 		4B884F6C180A7176000E5E1E = {
 			isa = PBXGroup;
 			children = (
+				4BB0C6D1181E582E0069A64D /* Model */,
 				4B884F80180A7176000E5E1E /* LuXun-iOS */,
 				4B884FA6180A7176000E5E1E /* LuXun-iOSTests */,
 				4B1C4A51183B18620030C3E4 /* LuXun OSX */,
@@ -301,7 +302,6 @@
 				4B884F96180A7176000E5E1E /* LXFlipsideViewController.m */,
 				4B884F98180A7176000E5E1E /* Images.xcassets */,
 				4B884F81180A7176000E5E1E /* Supporting Files */,
-				4BB0C6D1181E582E0069A64D /* Model */,
 				4BF4803A180BD9200093B0D4 /* NSString+LuXun.h */,
 				4BF4803B180BD9200093B0D4 /* NSString+LuXun.m */,
 				4B91739C18116DCC00598265 /* LXPinyinLabel.h */,
@@ -365,6 +365,7 @@
 				4BB1A0891829FE260098248A /* LXMemory.m */,
 			);
 			name = Model;
+			path = "LuXun-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

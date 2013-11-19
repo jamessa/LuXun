@@ -42,6 +42,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B884F9D180A7176000E5E1E"
+               BuildableName = "LuXun iOS Tests.xctest"
+               BlueprintName = "LuXun iOS Tests"
+               ReferencedContainer = "container:LuXun.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
