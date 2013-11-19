@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1C4A4C183B18620030C3E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1C4A4B183B18620030C3E4 /* Cocoa.framework */; };
+		4B1C4A56183B18620030C3E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A54183B18620030C3E4 /* InfoPlist.strings */; };
+		4B1C4A58183B18620030C3E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1C4A57183B18620030C3E4 /* main.m */; };
+		4B1C4A5C183B18620030C3E4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A5A183B18620030C3E4 /* Credits.rtf */; };
+		4B1C4A5F183B18620030C3E4 /* LXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1C4A5E183B18620030C3E4 /* LXAppDelegate.m */; };
+		4B1C4A62183B18630030C3E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A60183B18630030C3E4 /* MainMenu.xib */; };
+		4B1C4A65183B18630030C3E4 /* LuXun_OSX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */; };
+		4B1C4A67183B18630030C3E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A66183B18630030C3E4 /* Images.xcassets */; };
+		4B1C4A6D183B18630030C3E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F9F180A7176000E5E1E /* XCTest.framework */; };
+		4B1C4A6E183B18630030C3E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1C4A4B183B18620030C3E4 /* Cocoa.framework */; };
+		4B1C4A76183B18630030C3E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A74183B18630030C3E4 /* InfoPlist.strings */; };
+		4B1C4A78183B18630030C3E4 /* LuXun_OSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1C4A77183B18630030C3E4 /* LuXun_OSXTests.m */; };
 		4B5F7959180B1436008FEFDC /* LXCoach.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F7958180B1436008FEFDC /* LXCoach.m */; };
 		4B85DB39180FDBED00C2849D /* LXCoachAndStrategyTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */; };
 		4B884F79180A7176000E5E1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B884F78180A7176000E5E1E /* Foundation.framework */; };
@@ -47,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4B1C4A6F183B18630030C3E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B884F6D180A7176000E5E1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B1C4A49183B18620030C3E4;
+			remoteInfo = "LuXun OSX";
+		};
 		4B884FA4180A7176000E5E1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4B884F6D180A7176000E5E1E /* Project object */;
@@ -58,12 +77,31 @@
 
 /* Begin PBXFileReference section */
 		158C8E1D86634B32B9F10B1B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4B1C4A4A183B18620030C3E4 /* LuXun OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuXun OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1C4A4B183B18620030C3E4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		4B1C4A4E183B18620030C3E4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4B1C4A4F183B18620030C3E4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B1C4A50183B18620030C3E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4B1C4A53183B18620030C3E4 /* LuXun OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LuXun OSX-Info.plist"; sourceTree = "<group>"; };
+		4B1C4A55183B18620030C3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4B1C4A57183B18620030C3E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B1C4A59183B18620030C3E4 /* LuXun OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LuXun OSX-Prefix.pch"; sourceTree = "<group>"; };
+		4B1C4A5B183B18620030C3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4B1C4A5D183B18620030C3E4 /* LXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAppDelegate.h; sourceTree = "<group>"; };
+		4B1C4A5E183B18620030C3E4 /* LXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAppDelegate.m; sourceTree = "<group>"; };
+		4B1C4A61183B18630030C3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4B1C4A64183B18630030C3E4 /* LuXun_OSX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LuXun_OSX.xcdatamodel; sourceTree = "<group>"; };
+		4B1C4A66183B18630030C3E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4B1C4A6C183B18630030C3E4 /* LuXun OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LuXun OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1C4A73183B18630030C3E4 /* LuXun OSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LuXun OSXTests-Info.plist"; sourceTree = "<group>"; };
+		4B1C4A75183B18630030C3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4B1C4A77183B18630030C3E4 /* LuXun_OSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuXun_OSXTests.m; sourceTree = "<group>"; };
 		4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dict-revised.sqlite3"; sourceTree = "<group>"; };
 		4B5F7957180B1436008FEFDC /* LXCoach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCoach.h; sourceTree = "<group>"; };
 		4B5F7958180B1436008FEFDC /* LXCoach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoach.m; sourceTree = "<group>"; };
 		4B78174E180A93D1001A45B8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		4B85DB38180FDBED00C2849D /* LXCoachAndStrategyTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCoachAndStrategyTestCase.m; sourceTree = "<group>"; };
-		4B884F75180A7176000E5E1E /* LuXun-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuXun-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B884F75180A7176000E5E1E /* LuXun iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LuXun iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B884F78180A7176000E5E1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B884F7A180A7176000E5E1E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4B884F7C180A7176000E5E1E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -81,7 +119,7 @@
 		4B884F95180A7176000E5E1E /* LXFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXFlipsideViewController.h; sourceTree = "<group>"; };
 		4B884F96180A7176000E5E1E /* LXFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXFlipsideViewController.m; sourceTree = "<group>"; };
 		4B884F98180A7176000E5E1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4B884F9E180A7176000E5E1E /* LuXun-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LuXun-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B884F9E180A7176000E5E1E /* LuXun iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LuXun iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B884F9F180A7176000E5E1E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4B884FA8180A7176000E5E1E /* LuXun-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LuXun-iOSTests-Info.plist"; sourceTree = "<group>"; };
 		4B884FAA180A7176000E5E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -112,6 +150,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B1C4A47183B18620030C3E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A4C183B18620030C3E4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1C4A69183B18630030C3E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A6E183B18630030C3E4 /* Cocoa.framework in Frameworks */,
+				4B1C4A6D183B18630030C3E4 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B884F72180A7176000E5E1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,11 +194,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1C4A4D183B18620030C3E4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C4A4E183B18620030C3E4 /* AppKit.framework */,
+				4B1C4A4F183B18620030C3E4 /* CoreData.framework */,
+				4B1C4A50183B18620030C3E4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4B1C4A51183B18620030C3E4 /* LuXun OSX */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C4A5D183B18620030C3E4 /* LXAppDelegate.h */,
+				4B1C4A5E183B18620030C3E4 /* LXAppDelegate.m */,
+				4B1C4A60183B18630030C3E4 /* MainMenu.xib */,
+				4B1C4A66183B18630030C3E4 /* Images.xcassets */,
+				4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */,
+				4B1C4A52183B18620030C3E4 /* Supporting Files */,
+			);
+			path = "LuXun OSX";
+			sourceTree = "<group>";
+		};
+		4B1C4A52183B18620030C3E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C4A53183B18620030C3E4 /* LuXun OSX-Info.plist */,
+				4B1C4A54183B18620030C3E4 /* InfoPlist.strings */,
+				4B1C4A57183B18620030C3E4 /* main.m */,
+				4B1C4A59183B18620030C3E4 /* LuXun OSX-Prefix.pch */,
+				4B1C4A5A183B18620030C3E4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B1C4A71183B18630030C3E4 /* LuXun OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C4A77183B18630030C3E4 /* LuXun_OSXTests.m */,
+				4B1C4A72183B18630030C3E4 /* Supporting Files */,
+			);
+			path = "LuXun OSXTests";
+			sourceTree = "<group>";
+		};
+		4B1C4A72183B18630030C3E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C4A73183B18630030C3E4 /* LuXun OSXTests-Info.plist */,
+				4B1C4A74183B18630030C3E4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4B884F6C180A7176000E5E1E = {
 			isa = PBXGroup;
 			children = (
 				4B884F80180A7176000E5E1E /* LuXun-iOS */,
 				4B884FA6180A7176000E5E1E /* LuXun-iOSTests */,
+				4B1C4A51183B18620030C3E4 /* LuXun OSX */,
+				4B1C4A71183B18630030C3E4 /* LuXun OSXTests */,
 				4B884F77180A7176000E5E1E /* Frameworks */,
 				4B884F76180A7176000E5E1E /* Products */,
 				158C8E1D86634B32B9F10B1B /* Pods.xcconfig */,
@@ -154,8 +264,10 @@
 		4B884F76180A7176000E5E1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B884F75180A7176000E5E1E /* LuXun-iOS.app */,
-				4B884F9E180A7176000E5E1E /* LuXun-iOSTests.xctest */,
+				4B884F75180A7176000E5E1E /* LuXun iOS.app */,
+				4B884F9E180A7176000E5E1E /* LuXun iOS Tests.xctest */,
+				4B1C4A4A183B18620030C3E4 /* LuXun OSX.app */,
+				4B1C4A6C183B18630030C3E4 /* LuXun OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +283,8 @@
 				4B884F9F180A7176000E5E1E /* XCTest.framework */,
 				B381211C23604FE78063F343 /* libPods.a */,
 				AF8008EEEB7A43229C81141B /* libPods-LuXun-iOSTests.a */,
+				4B1C4A4B183B18620030C3E4 /* Cocoa.framework */,
+				4B1C4A4D183B18620030C3E4 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,9 +370,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B884F74180A7176000E5E1E /* LuXun-iOS */ = {
+		4B1C4A49183B18620030C3E4 /* LuXun OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B884FB0180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun-iOS" */;
+			buildConfigurationList = 4B1C4A79183B18630030C3E4 /* Build configuration list for PBXNativeTarget "LuXun OSX" */;
+			buildPhases = (
+				4B1C4A46183B18620030C3E4 /* Sources */,
+				4B1C4A47183B18620030C3E4 /* Frameworks */,
+				4B1C4A48183B18620030C3E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LuXun OSX";
+			productName = "LuXun OSX";
+			productReference = 4B1C4A4A183B18620030C3E4 /* LuXun OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B1C4A6B183B18630030C3E4 /* LuXun OSX Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B1C4A7C183B18630030C3E4 /* Build configuration list for PBXNativeTarget "LuXun OSX Tests" */;
+			buildPhases = (
+				4B1C4A68183B18630030C3E4 /* Sources */,
+				4B1C4A69183B18630030C3E4 /* Frameworks */,
+				4B1C4A6A183B18630030C3E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B1C4A70183B18630030C3E4 /* PBXTargetDependency */,
+			);
+			name = "LuXun OSX Tests";
+			productName = "LuXun OSXTests";
+			productReference = 4B1C4A6C183B18630030C3E4 /* LuXun OSX Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4B884F74180A7176000E5E1E /* LuXun iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B884FB0180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun iOS" */;
 			buildPhases = (
 				037BC80453F948B2BAAA5444 /* Check Pods Manifest.lock */,
 				4B884F71180A7176000E5E1E /* Sources */,
@@ -270,14 +419,14 @@
 			);
 			dependencies = (
 			);
-			name = "LuXun-iOS";
+			name = "LuXun iOS";
 			productName = "LuXun-iOS";
-			productReference = 4B884F75180A7176000E5E1E /* LuXun-iOS.app */;
+			productReference = 4B884F75180A7176000E5E1E /* LuXun iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4B884F9D180A7176000E5E1E /* LuXun-iOSTests */ = {
+		4B884F9D180A7176000E5E1E /* LuXun iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B884FB3180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun-iOSTests" */;
+			buildConfigurationList = 4B884FB3180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun iOS Tests" */;
 			buildPhases = (
 				799097E58547467DA43AF069 /* Check Pods Manifest.lock */,
 				4B884F9A180A7176000E5E1E /* Sources */,
@@ -290,9 +439,9 @@
 			dependencies = (
 				4B884FA5180A7176000E5E1E /* PBXTargetDependency */,
 			);
-			name = "LuXun-iOSTests";
+			name = "LuXun iOS Tests";
 			productName = "LuXun-iOSTests";
-			productReference = 4B884F9E180A7176000E5E1E /* LuXun-iOSTests.xctest */;
+			productReference = 4B884F9E180A7176000E5E1E /* LuXun iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -305,12 +454,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = 2think;
 				TargetAttributes = {
+					4B1C4A6B183B18630030C3E4 = {
+						TestTargetID = 4B884F74180A7176000E5E1E;
+					};
 					4B884F9D180A7176000E5E1E = {
 						TestTargetID = 4B884F74180A7176000E5E1E;
 					};
 				};
 			};
-			buildConfigurationList = 4B884F70180A7176000E5E1E /* Build configuration list for PBXProject "LuXun-iOS" */;
+			buildConfigurationList = 4B884F70180A7176000E5E1E /* Build configuration list for PBXProject "LuXun" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -323,13 +475,34 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B884F74180A7176000E5E1E /* LuXun-iOS */,
-				4B884F9D180A7176000E5E1E /* LuXun-iOSTests */,
+				4B884F74180A7176000E5E1E /* LuXun iOS */,
+				4B884F9D180A7176000E5E1E /* LuXun iOS Tests */,
+				4B1C4A49183B18620030C3E4 /* LuXun OSX */,
+				4B1C4A6B183B18630030C3E4 /* LuXun OSX Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B1C4A48183B18620030C3E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A56183B18620030C3E4 /* InfoPlist.strings in Resources */,
+				4B1C4A67183B18630030C3E4 /* Images.xcassets in Resources */,
+				4B1C4A5C183B18620030C3E4 /* Credits.rtf in Resources */,
+				4B1C4A62183B18630030C3E4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1C4A6A183B18630030C3E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A76183B18630030C3E4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B884F73180A7176000E5E1E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +589,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B1C4A46183B18620030C3E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A5F183B18620030C3E4 /* LXAppDelegate.m in Sources */,
+				4B1C4A65183B18630030C3E4 /* LuXun_OSX.xcdatamodeld in Sources */,
+				4B1C4A58183B18620030C3E4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1C4A68183B18630030C3E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B1C4A78183B18630030C3E4 /* LuXun_OSXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B884F71180A7176000E5E1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,14 +645,51 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4B1C4A70183B18630030C3E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B1C4A49183B18620030C3E4 /* LuXun OSX */;
+			targetProxy = 4B1C4A6F183B18630030C3E4 /* PBXContainerItemProxy */;
+		};
 		4B884FA5180A7176000E5E1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B884F74180A7176000E5E1E /* LuXun-iOS */;
+			target = 4B884F74180A7176000E5E1E /* LuXun iOS */;
 			targetProxy = 4B884FA4180A7176000E5E1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4B1C4A54183B18620030C3E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B1C4A55183B18620030C3E4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4B1C4A5A183B18620030C3E4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B1C4A5B183B18620030C3E4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4B1C4A60183B18630030C3E4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B1C4A61183B18630030C3E4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4B1C4A74183B18630030C3E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B1C4A75183B18630030C3E4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		4B884F83180A7176000E5E1E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -489,6 +717,98 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B1C4A7A183B18630030C3E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LuXun OSX/LuXun OSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LuXun OSX/LuXun OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4B1C4A7B183B18630030C3E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LuXun OSX/LuXun OSX-Prefix.pch";
+				INFOPLIST_FILE = "LuXun OSX/LuXun OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4B1C4A7D183B18630030C3E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LuXun OSX/LuXun OSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LuXun OSXTests/LuXun OSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4B1C4A7E183B18630030C3E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LuXun OSX/LuXun OSX-Prefix.pch";
+				INFOPLIST_FILE = "LuXun OSXTests/LuXun OSXTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		4B884FAE180A7176000E5E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -594,7 +914,7 @@
 			baseConfigurationReference = CA41960BDD9D4E32AA93CA22 /* Pods-LuXun-iOSTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun-iOS.app/LuXun-iOS";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -620,7 +940,7 @@
 			baseConfigurationReference = CA41960BDD9D4E32AA93CA22 /* Pods-LuXun-iOSTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun-iOS.app/LuXun-iOS";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -640,7 +960,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B884F70180A7176000E5E1E /* Build configuration list for PBXProject "LuXun-iOS" */ = {
+		4B1C4A79183B18630030C3E4 /* Build configuration list for PBXNativeTarget "LuXun OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1C4A7A183B18630030C3E4 /* Debug */,
+				4B1C4A7B183B18630030C3E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B1C4A7C183B18630030C3E4 /* Build configuration list for PBXNativeTarget "LuXun OSX Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B1C4A7D183B18630030C3E4 /* Debug */,
+				4B1C4A7E183B18630030C3E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B884F70180A7176000E5E1E /* Build configuration list for PBXProject "LuXun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B884FAE180A7176000E5E1E /* Debug */,
@@ -649,7 +987,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B884FB0180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun-iOS" */ = {
+		4B884FB0180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B884FB1180A7176000E5E1E /* Debug */,
@@ -658,7 +996,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B884FB3180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun-iOSTests" */ = {
+		4B884FB3180A7176000E5E1E /* Build configuration list for PBXNativeTarget "LuXun iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B884FB4180A7176000E5E1E /* Debug */,
@@ -670,6 +1008,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4B1C4A64183B18630030C3E4 /* LuXun_OSX.xcdatamodel */,
+			);
+			currentVersion = 4B1C4A64183B18630030C3E4 /* LuXun_OSX.xcdatamodel */;
+			path = LuXun_OSX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		4B884F8F180A7176000E5E1E /* LuXun_iOS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
