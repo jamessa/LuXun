@@ -66,9 +66,9 @@
   
   NSDictionary *firstRow = (NSDictionary*)[[self executeQuery:countQueryString] firstObject];
   
-  NSUInteger randomOffset = rand()%[firstRow[@"count(*)"] unsignedIntegerValue];
+  u_int32_t randomOffset = arc4random_uniform([firstRow[@"count(*)"] unsignedIntValue]);
   
-  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms2.pinyin from heteronyms2 inner join entries on entries.id = heteronyms2.entry_id where heteronyms2.pinyin match '%@' limit 1 offset %lu ;", pinyin, (unsigned long)randomOffset];
+  NSString *queryString = [NSString stringWithFormat:@"select entries.title, heteronyms2.pinyin from heteronyms2 inner join entries on entries.id = heteronyms2.entry_id where heteronyms2.pinyin match '%@' limit 1 offset %lu;", pinyin, (unsigned long)randomOffset];
   return [[self executeQuery:queryString] firstObject];
 }
 
