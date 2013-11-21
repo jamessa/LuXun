@@ -7,6 +7,7 @@
 //
 
 #import "LXDict.h"
+#import <FMDB/FMDatabase.h>
 
 @implementation LXDict {
   FMDatabase *database;

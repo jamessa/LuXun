@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C682B199CEF4474AC35B2F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B381211C23604FE78063F343 /* libPods.a */; };
 		4B1C4A4C183B18620030C3E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1C4A4B183B18620030C3E4 /* Cocoa.framework */; };
 		4B1C4A56183B18620030C3E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B1C4A54183B18620030C3E4 /* InfoPlist.strings */; };
 		4B1C4A58183B18620030C3E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1C4A57183B18620030C3E4 /* main.m */; };
@@ -48,6 +49,14 @@
 		4BBA6991180A99C2003754E1 /* dict-revised.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */; };
 		4BBA6994180A9AFE003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
 		4BBA6995180A9B0F003754E1 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
+		4BC632A4183C722F0010EFD6 /* dict-revised.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */; };
+		4BC632A5183C72380010EFD6 /* LXCoach.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F7958180B1436008FEFDC /* LXCoach.m */; };
+		4BC632A6183C723E0010EFD6 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
+		4BC632A7183C72400010EFD6 /* LXDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA6993180A9AFE003754E1 /* LXDict.m */; };
+		4BC632A8183C72430010EFD6 /* LXHistory+Addons.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0C6CF181E581F0069A64D /* LXHistory+Addons.m */; };
+		4BC632AA183C72470010EFD6 /* LXHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D3FF1818FCB00064CC31 /* LXHistory.m */; };
+		4BC632AB183C724A0010EFD6 /* LXMemory+Addons.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D6D51820BE500087B9D3 /* LXMemory+Addons.m */; };
+		4BC632AC183C724D0010EFD6 /* LXMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1A0891829FE260098248A /* LXMemory.m */; };
 		4BE3D4001818FCB00064CC31 /* LXHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D3FF1818FCB00064CC31 /* LXHistory.m */; };
 		4BE3D4021819003E0064CC31 /* LXHistoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D4011819003E0064CC31 /* LXHistoryTestCase.m */; };
 		4BF26056181A7DFF0026F3FF /* LXStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF26055181A7DFF0026F3FF /* LXStatisticViewController.m */; };
@@ -155,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1C4A4C183B18620030C3E4 /* Cocoa.framework in Frameworks */,
+				2C682B199CEF4474AC35B2F5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +214,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		4B1C4A51183B18620030C3E4 /* LuXun OSX */ = {
+		4B1C4A51183B18620030C3E4 /* LuXun-OSX */ = {
 			isa = PBXGroup;
 			children = (
 				4B1C4A5D183B18620030C3E4 /* LXAppDelegate.h */,
@@ -214,6 +224,7 @@
 				4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */,
 				4B1C4A52183B18620030C3E4 /* Supporting Files */,
 			);
+			name = "LuXun-OSX";
 			path = "LuXun OSX";
 			sourceTree = "<group>";
 		};
@@ -229,12 +240,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B1C4A71183B18630030C3E4 /* LuXun OSXTests */ = {
+		4B1C4A71183B18630030C3E4 /* LuXun-OSX-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4B1C4A77183B18630030C3E4 /* LuXun_OSXTests.m */,
 				4B1C4A72183B18630030C3E4 /* Supporting Files */,
 			);
+			name = "LuXun-OSX-Tests";
 			path = "LuXun OSXTests";
 			sourceTree = "<group>";
 		};
@@ -252,9 +264,9 @@
 			children = (
 				4BB0C6D1181E582E0069A64D /* Model */,
 				4B884F80180A7176000E5E1E /* LuXun-iOS */,
-				4B884FA6180A7176000E5E1E /* LuXun-iOSTests */,
-				4B1C4A51183B18620030C3E4 /* LuXun OSX */,
-				4B1C4A71183B18630030C3E4 /* LuXun OSXTests */,
+				4B884FA6180A7176000E5E1E /* LuXun-iOS-Tests */,
+				4B1C4A51183B18620030C3E4 /* LuXun-OSX */,
+				4B1C4A71183B18630030C3E4 /* LuXun-OSX-Tests */,
 				4B884F77180A7176000E5E1E /* Frameworks */,
 				4B884F76180A7176000E5E1E /* Products */,
 				158C8E1D86634B32B9F10B1B /* Pods.xcconfig */,
@@ -315,7 +327,6 @@
 		4B884F81180A7176000E5E1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */,
 				4B884FB6180A71A5000E5E1E /* PinyinToZhuyin.plist */,
 				4B884F82180A7176000E5E1E /* LuXun-iOS-Info.plist */,
 				4B884F83180A7176000E5E1E /* InfoPlist.strings */,
@@ -325,7 +336,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B884FA6180A7176000E5E1E /* LuXun-iOSTests */ = {
+		4B884FA6180A7176000E5E1E /* LuXun-iOS-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4B884FAC180A7176000E5E1E /* LuXun_iOSTests.m */,
@@ -335,6 +346,7 @@
 				4B884FA7180A7176000E5E1E /* Supporting Files */,
 				4BF4803F180BD9AA0093B0D4 /* XCStringTestCase.m */,
 			);
+			name = "LuXun-iOS-Tests";
 			path = "LuXun-iOSTests";
 			sourceTree = "<group>";
 		};
@@ -350,6 +362,7 @@
 		4BB0C6D1181E582E0069A64D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B59A26C180A8FDA00BD5A35 /* dict-revised.sqlite3 */,
 				4B884F8F180A7176000E5E1E /* LuXun_iOS.xcdatamodeld */,
 				4B5F7957180B1436008FEFDC /* LXCoach.h */,
 				4B5F7958180B1436008FEFDC /* LXCoach.m */,
@@ -375,9 +388,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B1C4A79183B18630030C3E4 /* Build configuration list for PBXNativeTarget "LuXun OSX" */;
 			buildPhases = (
+				038BB03DAE1A449B8FCC2868 /* Check Pods Manifest.lock */,
 				4B1C4A46183B18620030C3E4 /* Sources */,
 				4B1C4A47183B18620030C3E4 /* Frameworks */,
 				4B1C4A48183B18620030C3E4 /* Resources */,
+				7C82F124DCBA41AF901931E7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -456,7 +471,7 @@
 				ORGANIZATIONNAME = 2think;
 				TargetAttributes = {
 					4B1C4A6B183B18630030C3E4 = {
-						TestTargetID = 4B884F74180A7176000E5E1E;
+						TestTargetID = 4B1C4A49183B18620030C3E4;
 					};
 					4B884F9D180A7176000E5E1E = {
 						TestTargetID = 4B884F74180A7176000E5E1E;
@@ -490,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1C4A56183B18620030C3E4 /* InfoPlist.strings in Resources */,
+				4BC632A4183C722F0010EFD6 /* dict-revised.sqlite3 in Resources */,
 				4B1C4A67183B18630030C3E4 /* Images.xcassets in Resources */,
 				4B1C4A5C183B18620030C3E4 /* Credits.rtf in Resources */,
 				4B1C4A62183B18630030C3E4 /* MainMenu.xib in Resources */,
@@ -542,6 +558,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		038BB03DAE1A449B8FCC2868 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		06827783F0F641A79FA2D4BB /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -572,6 +603,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		7C82F124DCBA41AF901931E7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BF63A6EAD83F4A7CB28B9C45 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -595,7 +641,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1C4A5F183B18620030C3E4 /* LXAppDelegate.m in Sources */,
+				4BC632AC183C724D0010EFD6 /* LXMemory.m in Sources */,
 				4B1C4A65183B18630030C3E4 /* LuXun_OSX.xcdatamodeld in Sources */,
+				4BC632AA183C72470010EFD6 /* LXHistory.m in Sources */,
+				4BC632A5183C72380010EFD6 /* LXCoach.m in Sources */,
+				4BC632A8183C72430010EFD6 /* LXHistory+Addons.m in Sources */,
+				4BC632AB183C724A0010EFD6 /* LXMemory+Addons.m in Sources */,
+				4BC632A6183C723E0010EFD6 /* LXDict.m in Sources */,
 				4B1C4A58183B18620030C3E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1C4A78183B18630030C3E4 /* LuXun_OSXTests.m in Sources */,
+				4BC632A7183C72400010EFD6 /* LXDict.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +773,7 @@
 /* Begin XCBuildConfiguration section */
 		4B1C4A7A183B18630030C3E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158C8E1D86634B32B9F10B1B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -744,6 +798,7 @@
 		};
 		4B1C4A7B183B18630030C3E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158C8E1D86634B32B9F10B1B /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -766,11 +821,13 @@
 		4B1C4A7D183B18630030C3E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun OSX.app/Contents/MacOS/LuXun OSX";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+					"\"${PODS_ROOT}/Headers\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -779,8 +836,15 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode51-DP.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+				);
 				INFOPLIST_FILE = "LuXun OSXTests/LuXun OSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -791,18 +855,27 @@
 		4B1C4A7E183B18630030C3E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun iOS.app/LuXun iOS";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuXun OSX.app/Contents/MacOS/LuXun OSX";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+					"\"${PODS_ROOT}/Headers\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LuXun OSX/LuXun OSX-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode51-DP.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+				);
 				INFOPLIST_FILE = "LuXun OSXTests/LuXun OSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";

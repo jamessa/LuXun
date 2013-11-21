@@ -7,12 +7,24 @@
 //
 
 #import "LXMemory+Addons.h"
-#import "LXAppDelegate.h"
 
 @implementation LXMemory (Addons)
 
++ (id)sharedDelegate{
+  
+#ifdef __IPHONE_7_1
+  return [UIApplication sharedApplication] delegate];
+#endif
+
+#ifdef __MAC_10_9
+  return [[NSApplication sharedApplication] delegate];
+#endif
+  
+}
+
 + (void)reset {
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   
   // Clean
   NSFetchRequest *allMemories = [[NSFetchRequest alloc] init];
@@ -34,7 +46,8 @@
   /* Accumulated count is used here to easily find out reading weight
    
    */
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   
   NSInteger total = [[memories valueForKeyPath:@"@sum.count"] integerValue];
   NSInteger accumulate = 0;
@@ -49,13 +62,15 @@
 }
 
 + (void)sharedMemory {
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   
   
 }
 
 + (NSTimeInterval)timeNeededForPinyin:(NSString *)reading {
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
   NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":reading}];
   
@@ -72,7 +87,8 @@
 }
 
 + (void)setTimeNeeded:(NSTimeInterval)timeNeeded forPinyin:(NSString *)pinyin {
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   NSManagedObjectModel *model = [[context persistentStoreCoordinator] managedObjectModel];
   NSFetchRequest *fetchAMemory = [model fetchRequestFromTemplateWithName:@"aMemory" substitutionVariables:@{@"READING":pinyin}];
   
@@ -101,7 +117,8 @@
 
 + (NSString *)leastPracticedPinyinInSection:(NSUInteger)section {
   
-  NSManagedObjectContext *context = ((LXAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
+  id appDelegate = [LXMemory sharedDelegate];
+  NSManagedObjectContext *context = [appDelegate managedObjectContext];
   NSManagedObjectModel *model = [[context persistentStoreCoordinator]managedObjectModel];
   NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"leastPracticedPinyinInSection" substitutionVariables:@{@"SECTION":@0}];
   NSSortDescriptor *byTimeNeeded = [NSSortDescriptor sortDescriptorWithKey:@"timeNeeded" ascending:NO];
