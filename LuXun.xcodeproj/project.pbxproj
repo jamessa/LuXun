@@ -57,6 +57,7 @@
 		4BC632AA183C72470010EFD6 /* LXHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D3FF1818FCB00064CC31 /* LXHistory.m */; };
 		4BC632AB183C724A0010EFD6 /* LXMemory+Addons.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D6D51820BE500087B9D3 /* LXMemory+Addons.m */; };
 		4BC632AC183C724D0010EFD6 /* LXMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1A0891829FE260098248A /* LXMemory.m */; };
+		4BD6B154183F4097003D37F1 /* appController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD6B153183F4097003D37F1 /* appController.m */; };
 		4BE3D4001818FCB00064CC31 /* LXHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D3FF1818FCB00064CC31 /* LXHistory.m */; };
 		4BE3D4021819003E0064CC31 /* LXHistoryTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3D4011819003E0064CC31 /* LXHistoryTestCase.m */; };
 		4BF26056181A7DFF0026F3FF /* LXStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF26055181A7DFF0026F3FF /* LXStatisticViewController.m */; };
@@ -145,6 +146,8 @@
 		4BB1A0891829FE260098248A /* LXMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMemory.m; sourceTree = "<group>"; };
 		4BBA6992180A9AFE003754E1 /* LXDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDict.h; sourceTree = "<group>"; };
 		4BBA6993180A9AFE003754E1 /* LXDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDict.m; sourceTree = "<group>"; };
+		4BD6B152183F4097003D37F1 /* appController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appController.h; sourceTree = "<group>"; };
+		4BD6B153183F4097003D37F1 /* appController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appController.m; sourceTree = "<group>"; };
 		4BE3D3FE1818FCB00064CC31 /* LXHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHistory.h; sourceTree = "<group>"; };
 		4BE3D3FF1818FCB00064CC31 /* LXHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHistory.m; sourceTree = "<group>"; };
 		4BE3D4011819003E0064CC31 /* LXHistoryTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTestCase.m; sourceTree = "<group>"; };
@@ -217,11 +220,13 @@
 		4B1C4A51183B18620030C3E4 /* LuXun-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				4BD6B152183F4097003D37F1 /* appController.h */,
+				4BD6B153183F4097003D37F1 /* appController.m */,
+				4B1C4A66183B18630030C3E4 /* Images.xcassets */,
+				4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */,
 				4B1C4A5D183B18620030C3E4 /* LXAppDelegate.h */,
 				4B1C4A5E183B18620030C3E4 /* LXAppDelegate.m */,
 				4B1C4A60183B18630030C3E4 /* MainMenu.xib */,
-				4B1C4A66183B18630030C3E4 /* Images.xcassets */,
-				4B1C4A63183B18630030C3E4 /* LuXun_OSX.xcdatamodeld */,
 				4B1C4A52183B18620030C3E4 /* Supporting Files */,
 			);
 			name = "LuXun-OSX";
@@ -641,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1C4A5F183B18620030C3E4 /* LXAppDelegate.m in Sources */,
+				4BD6B154183F4097003D37F1 /* appController.m in Sources */,
 				4BC632AC183C724D0010EFD6 /* LXMemory.m in Sources */,
 				4B1C4A65183B18630030C3E4 /* LuXun_OSX.xcdatamodeld in Sources */,
 				4BC632AA183C72470010EFD6 /* LXHistory.m in Sources */,
