@@ -37,11 +37,14 @@
   NSDictionary *coachCharacter = [coach nextMove];
   ((NSTextFieldCell*)_pinyinTextField.cell).title = coachCharacter[@"pinyin"];
   ((NSTextFieldCell*)_hanziTextField.cell).title = coachCharacter[@"title"];
+  ((NSTextFieldCell*)_inputTextField.cell).title = @"";
 }
 
 #pragma mark - Notification
 - (void)controlTextDidChange:(NSNotification *)notification {
   NSLog(@"%@", ((NSTextFieldCell*)_inputTextField.cell).title);
-  
+  if ( [((NSTextFieldCell*)_hanziTextField.cell).title isEqualToString:((NSTextFieldCell*)_inputTextField.cell).title]){
+    [self newTrial];
+  }
 }
 @end
